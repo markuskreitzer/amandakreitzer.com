@@ -1,0 +1,68 @@
+extends ../../_/body
+
+//- variables
+block context
+    -
+        bodyId = 'exhibitions';
+        bodyClass = 'exhibitions index';
+        pageTitle = 'Exhibitions | Amanda Kreitzer';
+
+//- body
+block main
+
+    main(role="main")
+
+        .canvas
+
+            .content
+
+                h2.heading-page Exhibitions
+
+                section.exhibition
+
+                    h3.heading-section 2012 — Kleinevalleij
+
+                    +gallery-1({
+                        series: "2012",
+                        exhibition: "Kleinevalleij",
+                        path: `/assets/images/exhibitions/2012/_linked/_verbatim/`,
+                        type: "webp",
+                        images: [
+                            { caption: "Arrival of Guests at Kleinevalleij." },
+                            { caption: "Venue personnel preparing the apéritif." },
+                            { caption: "Violinist Piet de Beer entertaining guests." },
+                            { caption: "Carla and Petrus Bosman with Nicola Malan." },
+                            { caption: "Franci Malan enjoying a glass of local sparkling wine." },
+                            { caption: "Mayor Gesie van Deventer with Armand Hurter & Amanda Kreitzer." },
+                            { caption: "Amanda Kreitzer with writer Riana Scheepers." },
+                            { caption: "Former Springbok rugby player Schalk Burger opening the exhibition." },
+                            { caption: "Roses from Welbedacht Farm added flair to the exhibition." },
+                            { caption: "The exhibition hall." },
+                            { caption: "The exhibition hall." },
+                            { caption: "Guests relaxing on the porch." },
+                            { caption: "Guests perusing the art." },
+                            { caption: "Schalk Burger Snr and Emiliano Sandri." },
+                            { caption: "A lovely evening coming to an end." },
+                        ]
+                    })
+
+                //- TODO: reactivate the following two exhibitions
+                //- once more pictures are retrieved from storage.
+
+                //- section.exhibition
+                //-
+                //-     h3.heading-section 2009 — Simonsvlei Winery
+                //-
+                //-     +gallery-1({ series: "2009" })
+
+                //- section.exhibition
+                //-
+                //-     h3.heading-section 2005 — Wellington Museum
+                //-
+                //-     +gallery-1({ series: "2005" })
+
+            +nav-1({
+                target: "exhibitions",
+                direction: "prev",
+                icon: "nav-1-fill",
+            })

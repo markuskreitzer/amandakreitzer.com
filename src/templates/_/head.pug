@@ -1,0 +1,23 @@
+head
+
+    meta(charset="utf-8")
+
+    block description
+        meta(name="description" content="The gallery of artist Amanda Kreitzer.")
+
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=0.5")
+    meta(name="generator" content="Platframe")
+
+    title= pageTitle || "Gallery of Amanda Kreitzer"
+
+    block links
+        - if (ENV === 'production')
+            link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Source+Sans+Pro:wght@400;600;700&display=swap")
+        link(rel="stylesheet" href=`/assets/styles/root.css?v=${ TIME }`)
+        link(rel="icon" href="/assets/images/global/_linked/favicon.png")
+
+    block scripts
+        script(defer src=`/assets/logic/root.js?v=${ TIME }`)
+
+        - if (ENV === 'production')
+            +analytics('G-7LQFC5MHHP')

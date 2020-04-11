@@ -1,0 +1,42 @@
+extends ../root
+
+block body
+
+    body(id=bodyId class=bodyClass)
+
+        block header
+
+            +header-3("/", "", "Amanda Kreitzer", [
+                {
+                    href: "/",
+                    name: "Home"
+                },
+                {
+                    href: "/gallery",
+                    name: "Gallery"
+                },
+                {
+                    href: "/about",
+                    name: "About"
+                },
+                {
+                    href: "/exhibitions",
+                    name: "Exhibitions"
+                },
+                {
+                    href: "/contact",
+                    name: "Contact"
+                }
+            ])
+
+        block main
+
+        block footer
+
+            include ../../components/footers/3/_
+
+        //- end-of-body script insertion
+        block inject
+
+        //- compatibility
+        noscript This application require JavaScript, please enable it.

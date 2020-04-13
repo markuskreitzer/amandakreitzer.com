@@ -1,0 +1,31 @@
+extends ../../_/body
+
+//- variables
+block context
+    -
+        bodyId = 'gallery';
+        bodyClass = 'gallery index';
+        pageTitle = 'Gallery | Amanda Kreitzer';
+
+block header
+    +header-3("/", "", "Amanda Kreitzer", [
+        {
+            href: "/gallery",
+            name: "Gallery"
+        },
+        {
+            href: "/about",
+            name: "About"
+        },
+        {
+            href: "/contact",
+            name: "Contact"
+        }
+    ])
+
+//- body
+block main
+
+    main(role="main")
+
+        div(class="content")

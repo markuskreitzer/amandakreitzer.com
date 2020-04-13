@@ -10,7 +10,22 @@ block main
 
     main(role="main")
 
-        include _/front
-        include _/section-1
-        include _/section-2
-        include _/section-3
+        .canvas.landing
+
+            .content
+
+                header
+
+                    nav: ul
+                        li: a(href="/gallery") Gallery
+                        li: a(href="/about") About
+                        li: a(href="/contact") Contact
+
+                    h1.logo Amanda Kreitzer
+
+                img(srcset="/assets/images/home/_link/woman-having-tea--S.jpg 650w, " +
+                           "/assets/images/home/_link/woman-having-tea--M.jpg 1300w, " +
+                           "/assets/images/home/_link/woman-having-tea--L.jpg 2600w"
+                    sizes="(min-width: 900px) 50vw, 100vw"
+                    src="/assets/images/home/_link/woman-having-tea-1300w.jpg"
+                    alt="An oil on canvas painting by Amanda Kreitzer of a woman having tea.")

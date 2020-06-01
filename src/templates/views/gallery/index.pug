@@ -28,4 +28,39 @@ block main
 
     main(role="main")
 
-        div(class="content")
+        .canvas
+
+            .content
+
+                - const iterationsBuy = [1,2,3,4,5,6,7,8,9,10];
+
+                each count in iterationsBuy
+                    figure
+                        a(href="/assets/images/gallery/_link/1/medium.jpg")
+                            img(
+                                src="/assets/images/gallery/_link/1/small.jpg"
+                                alt="Lady with coffee. " +
+                                "A painting by Amanda Kreitzer.")
+                        figcaption
+                            | Lady with coffee
+                            .meta.available
+                                span.released Released: 2020
+                                span.price
+                                    | $8200
+                                    sup .00
+                                button.transact Purchase
+
+                - const iterationsSold = [1,2,3,4,5];
+
+                each count in iterationsSold
+                    figure
+                        a(href="/assets/images/gallery/_link/1/medium.jpg")
+                            img(
+                                src="/assets/images/gallery/_link/1/small.jpg"
+                                alt="Lady with coffee. " +
+                                "A painting by Amanda Kreitzer.")
+                        figcaption
+                            | Lady with coffee
+                            .meta.sold
+                                span.released Released: 2020
+                                button.transact Sold

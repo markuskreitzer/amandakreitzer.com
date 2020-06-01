@@ -1,0 +1,52 @@
+gallery_column_width = gallery_cw = 212px
+
+.gallery
+    .canvas
+        .content
+            display: grid
+            grid-auto-flow: row
+            align-content: start
+            justify-content: space-between
+            grid-template-rows: auto
+            grid-template-columns: repeat(5, gallery_cw)
+            column-gap: 2rem
+            row-gap: auto
+            figure
+                img
+                    border-radius: 5px
+                figcaption
+                    font-style: normal
+                    margin: .4rem 0 1rem
+                    .meta
+                        margin: .3rem 0 0
+                        span
+                            padding-right: .4rem
+                            &.released
+                                display: none
+                        .transact
+                            font-weight: 600
+                            letter-spacing: 1px
+                            text-transform: uppercase
+                        &.available
+                            .transact
+                                button(
+                                    type: 'border',
+                                    color: #2f8730,
+                                    rounded: true,
+                                    font-size: .7rem,
+                                    padding: rem(4px) rem(10px),
+                                    border-width: 1px
+                                )
+                        &.sold
+                            .transact
+                                button(color: #b58b81,
+                                    rounded: true,
+                                    font-size: .7rem,
+                                    padding: rem(4px) rem(10px)
+                                )
+                                pointer-events: none
+                &.modal-active
+                    .meta span
+                        display: block
+                    .released
+                        display: block

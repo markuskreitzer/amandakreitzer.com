@@ -7,6 +7,8 @@ block context
         bodyClass = 'about index';
         pageTitle = 'About | Amanda Kreitzer';
 
+        pathImages = '/assets/images/about/_link/';
+
 block header
     +header-3("/", "", "Amanda Kreitzer", [
         {
@@ -28,4 +30,25 @@ block main
 
     main(role="main")
 
-        div(class="content")
+        .canvas
+
+            .content
+
+                h2.heading-page About
+
+                article
+
+                    p Fromatic, aftertaste, cup in, rich redeye pumpkin spice fair trade barista foam. Viennese aromatic dark coffee, americano medium id as mocha roast. Cream frappuccino cup beans cappuccino latte variety coffee. Latte sugar beans cup café au lait flavour that.
+                    p Coffee, plunger pot trifecta, robust ristretto decaffeinated extra, medium flavour cup ut aromatic. Trifecta affogato body iced extra, foam est cup organic crema and aromatic. Filter carajillo mocha lungo aged mocha organic cinnamon. Aftertaste spoon, filter to go extraction kopi-luwak white kopi-luwak arabica.
+                    p Barista viennese con panna so skinny extraction breve. Java, et mug, roast that caramelization that, variety breve strong acerbic caramelization. Kopi-luwak french press plunger pot rich half and half redeye percolator trifecta spoon barista. Skinny, so dripper mocha, americano cream crema percolator variety coffee
+
+                    img(
+                        src=`${pathImages}amanda-kreitzer.jpg`
+                        width="400" height="auto"
+                        alt="artist Amanda Kreitzer")
+
+                    p Single shot, white, cappuccino skinny robust saucer, wings, milk aged coffee blue mountain wings. Filter kopi-luwak medium extra percolator irish brewed ristretto. Steamed latte, saucer cappuccino robust, est arabica cream frappuccino aged to go. Brewed, aged cultivar crema grinder cup viennese.
+                    p Galão variety est extra, redeye macchiato cup, whipped organic rich extra cortado. Id aromatic rich arabica blue mountain mug body. Organic, irish variety, et coffee skinny at extra. Foam white whipped java as lungo ristretto trifecta.
+                    p Doppio, est variety et, single origin fair trade affogato sit organic. Sit con panna irish breve lungo con panna foam. Macchiato organic arabica trifecta, breve so affogato cultivar skinny. Grounds mug aftertaste blue mountain fair trade spoon mazagran single shot.
+
+                hr

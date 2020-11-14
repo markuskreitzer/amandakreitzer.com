@@ -5,19 +5,24 @@
 // DEPENDENCIES
 
 // modules
+// import form from 'modules/form';
 import { smooth } from 'modules/scroll';
 
 // components
-import header from 'headers/1/_';
-import nav from 'navigation/1/_';
-import footer from 'footers/1/_';
+import nav1 from 'navigation/1/_';
 
 // EXECUTION
 document.addEventListener('DOMContentLoaded', () => {
 
-    nav();
+    nav1();
     smooth();
-    header();
-    footer();
+
+    // new form({
+    //     id: 'amandakreitzer_1',
+    //     success: '/contact/success.html',
+    //     failure: '/contact/failure.html',
+    //     destination: 'https://forms.cygnul.com/',
+    //     recaptcha: '6LcQTNkZAAAAAIJkLl4z0vRRMDpuLUv4LjZD2OJR',
+    // });
 
 });

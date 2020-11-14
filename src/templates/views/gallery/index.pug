@@ -7,6 +7,11 @@ block context
         bodyClass = 'gallery index';
         pageTitle = 'Gallery | Amanda Kreitzer';
 
+        artist = 'Artist: Amanda Kreitzer';
+        pathImages = '/assets/images/gallery/_link/';
+        iterationsBuy = [1,2,3,14,35,6,1,232,3,4,5,6,2,3,4,5,6];
+        iterationsSold = [11,12,13,14,15,11,12,13,14,15];
+
 block header
     +header-3("/", "", "Amanda Kreitzer", [
         {
@@ -32,35 +37,120 @@ block main
 
             .content
 
-                - const iterationsBuy = [1,2,3,4,5,6,7,8,9,10];
+                h2.heading-page The Gallery
 
-                each count in iterationsBuy
-                    figure
-                        a(href="/assets/images/gallery/_link/1/medium.jpg")
-                            img(
-                                src="/assets/images/gallery/_link/1/small.jpg"
-                                alt="Lady with coffee. " +
-                                "A painting by Amanda Kreitzer.")
-                        figcaption
-                            | Lady with coffee
-                            .meta.available
-                                span.released Released: 2020
-                                span.price
-                                    | $8200
-                                    sup .00
-                                button.transact Purchase
+                .grid
 
-                - const iterationsSold = [1,2,3,4,5];
+                    each count in iterationsBuy
 
-                each count in iterationsSold
-                    figure
-                        a(href="/assets/images/gallery/_link/1/medium.jpg")
-                            img(
-                                src="/assets/images/gallery/_link/1/small.jpg"
-                                alt="Lady with coffee. " +
-                                "A painting by Amanda Kreitzer.")
-                        figcaption
-                            | Lady with coffee
-                            .meta.sold
-                                span.released Released: 2020
-                                button.transact Sold
+                        .item
+
+                            a.thumbnail(href=`#${ count }`)
+                                img.thumbnail-image(src=`${ pathImages }1_thumb.jpg` alt="thumbnail")
+                                span.thumbnail-title Woman with cup
+                                span.thumbnail-id #{ count }
+
+                            .modal(id=`${ count }`)
+
+                                a.close(href="#")
+
+                                figure
+
+                                    img(src=`${ pathImages }1.jpg`
+                                        width="100%" height="auto"
+                                        alt=`Lady with coffee. ${ artist }`)
+
+                                    figcaption
+
+                                        .meta
+                                            span.title Woman with cup
+                                            span.artist by Amanda Kreitzer
+                                            span.id Art. ##{ count }
+
+                                            .meta-inner
+
+                                                dl
+                                                    dt released
+                                                    dd 2020
+                                                dl
+                                                    dt medium
+                                                    dd Oil
+                                                dl
+                                                    dt substrate
+                                                    dd Canvas
+                                                dl
+                                                    dt framed
+                                                    dd Yes
+                                                dl
+                                                    dt width
+                                                    dd 24" (72cm)
+                                                dl
+                                                    dt height
+                                                    dd 15" (35cm)
+
+                                        .actions
+                                            span.price
+                                                | $8200
+                                                sup .00
+
+                                            button.buy Buy
+
+                    each count in iterationsSold
+
+                        .item.sold
+
+                            a.thumbnail(href=`#${ count }`)
+                                img.thumbnail-image(src=`${ pathImages }1_thumb.jpg` alt="thumbnail")
+                                span.thumbnail-title Woman with cup
+                                span.thumbnail-id #{ count }
+
+                            .modal(id=`${ count }`)
+
+                                a.close(href="#")
+
+                                figure
+
+                                    img(src=`${ pathImages }1.jpg`
+                                        width="100%" height="auto"
+                                        alt=`Lady with coffee. ${ artist }`)
+
+                                    figcaption
+
+                                        .meta
+                                            span.title Woman with cup
+                                            span.artist by Amanda Kreitzer
+                                            span.id Art. ##{ count }
+
+                                            .meta-inner
+
+                                                dl
+                                                    dt released
+                                                    dd 2020
+                                                dl
+                                                    dt medium
+                                                    dd Oil
+                                                dl
+                                                    dt substrate
+                                                    dd Canvas
+                                                dl
+                                                    dt framed
+                                                    dd Yes
+                                                dl
+                                                    dt width
+                                                    dd 24" (72cm)
+                                                dl
+                                                    dt height
+                                                    dd 15" (35cm)
+
+                                        .actions
+                                            span.price
+                                                | $8200
+                                                sup .00
+
+                                            button.buy Buy
+
+            +nav-1({
+                target: "gallery",
+                direction: "prev",
+                icon: "nav-1-fill",
+            })

@@ -1,0 +1,68 @@
+-
+    artist = 'Artist: Amanda Kreitzer';
+    pathImages = '/assets/images/gallery/_linked/_verbatim/';
+    imgThumbWidth = '100%';
+    imgThumbHeight = 'auto';
+    imgWidth = '100%';
+    imgHeight = 'auto';
+
+    id = 38;
+
+.item
+
+    a.thumbnail(href=`#${ id }`)
+        img.thumbnail-image(
+            src=`${ pathImages }${ id }_thumb.webp`
+            width= imgThumbWidth
+            height= imgThumbHeight
+            loading="lazy"
+            alt="thumbnail")
+        span.thumbnail-title Woman with cup
+        span.thumbnail-id= id
+
+    .modal(id= id)
+
+        a.close(href="#")
+
+        figure
+
+            img(src=`${ pathImages }${ id }.webp`
+                width= imgWidth
+                height= imgHeight
+                loading="lazy"
+                alt="Lady with coffee.")
+
+            figcaption
+
+                .meta
+                    span.title Woman with cup
+                    span.artist by Amanda Kreitzer
+                    span.id Art. #{ id }
+
+                    .meta-inner
+
+                        dl
+                            dt released
+                            dd 2020
+                        dl
+                            dt medium
+                            dd Oil
+                        dl
+                            dt substrate
+                            dd Canvas
+                        dl
+                            dt framed
+                            dd Yes
+                        dl
+                            dt width
+                            dd 24" (72cm)
+                        dl
+                            dt height
+                            dd 15" (35cm)
+
+                .actions
+                    span.price
+                        | $8200
+                        sup .00
+
+                    a(href="/contact/" class="buy") Buy

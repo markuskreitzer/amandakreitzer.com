@@ -1,0 +1,22 @@
+carousel-1(scheme = __default, width = rem(800px), height = rem(800px))
+    .carousel-1
+        width: width
+        height: height
+        display: flex
+        position: relative
+        border-radius: 6px
+        background: _0
+        .slide
+            position: absolute
+            size(100%)
+            top: 0
+            right: 0
+            opacity: 0
+            object-fit: cover
+            object-position: center
+            transition: opacity 3s ease
+            z-index: 1
+            &.active
+                opacity: 1
+                z-index: 2
+        { block }

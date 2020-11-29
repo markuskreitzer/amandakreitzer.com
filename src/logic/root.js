@@ -5,24 +5,26 @@
 // DEPENDENCIES
 
 // modules
-// import form from 'modules/form';
+import Form from 'modules/form';
 import { smooth } from 'modules/scroll';
 
 // components
 import nav1 from 'navigation/1/_';
+import carousel1 from 'carousels/1/_';
 
 // EXECUTION
 document.addEventListener('DOMContentLoaded', () => {
 
     nav1();
     smooth();
+    carousel1({ delay: 5000 });
 
-    // new form({
-    //     id: 'amandakreitzer_1',
-    //     success: '/contact/success.html',
-    //     failure: '/contact/failure.html',
-    //     destination: 'https://forms.cygnul.com/',
-    //     recaptcha: '6LcQTNkZAAAAAIJkLl4z0vRRMDpuLUv4LjZD2OJR',
-    // });
+    new Form({
+        id: 'amandakreitzer_1',
+        success: '/contact/success.html',
+        failure: '/contact/failure.html',
+        destination: 'https://forms.cygnul.com/',
+        recaptcha: '6LcLifEZAAAAADKfIJsRnfEc2BTrSmJK_pIKtK50',
+    });
 
 });

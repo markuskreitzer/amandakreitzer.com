@@ -5,32 +5,40 @@ home_border_radius = home_br = 5px
         display none
     .canvas
         min-height: 100vh
-        align-items: center
+        align-content: center
         .content
             width: c_x
             display: flex
-            flex-wrap: wrap
+            //flex-wrap: wrap
             min-width: c_x_min
-            margin-top: -4rem
             justify-content: center
+            //align-self flex-start
             +min(1)
                 width: c_x_b1
             +min(2)
+                //align-self: center
                 width: 70%
+                //height 70vh
                 min-width: rem(850px)
+                //margin-top: -4rem
             +min(3)
-                width: 60%
-                max-width: rem(1200px)
+                //width: 100%
+                //height 800px
+                //max-width: rem(1200px)
             header
                 width: 100%
                 text-align center
                 display: flex
                 flex-flow row wrap
-                align-items flex-end
+                //align-items flex-end
                 justify-content: space-between
+                margin: rem(30px) 0 rem(12px)
                 +min(2)
-                    width: 25%
+                    width: 300px
+                    height 70vh
+                    min-height rem(500px)
                     flex-flow: column wrap
+                    margin 0
                     padding: 1rem
                     text-align left
                     border-radius: home_br 0 0 home_br
@@ -93,8 +101,3 @@ home_border_radius = home_br = 5px
                                     anchors(dark, nav)
                                     &:hover
                                         text-shadow: -1px -1px 0 _20
-            img
-                border-radius 6px
-                +min(2)
-                    width: 75%
-                    border-radius: 0 home_br home_br 0

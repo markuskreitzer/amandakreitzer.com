@@ -10,6 +10,10 @@ block context
 block header
     +header-3("/", "", "Amanda Kreitzer", [
         {
+            href: "/",
+            name: "Home"
+        },
+        {
             href: "/gallery",
             name: "Gallery"
         },
@@ -35,7 +39,7 @@ block main
                 h2.heading-page Contact
 
                 .form-advice
-                    p If Amanda Kreitzer's unique artistic interpretation delights your senses and you would like to have her brush add a distinct ambience to your home, you'll be glad to know that she accepts individual orders. Use the form below to get in touch and discuss your idea with her.
+                    p If Amanda Kreitzer's unique artistic interpretation delights your senses and you would like to have her brush add a distinct ambience to your home, you'll be glad to know that she accepts commissioned orders. Use the form below to get in touch and discuss your idea with her.
 
                 +form-1({
                     legend: {
@@ -47,8 +51,8 @@ block main
                         name: "subject",
                         label: "Subject:",
                         options: [
-                            { name: "General inquiry", value: "general inquiry", selected: "selected" },
-                            { name: "Special order", value: "special order" },
+                            { name: "Purchase inquiry", value: "purchase inquiry", selected: "selected" },
+                            { name: "Commission order", value: "commission order" },
                             { name: "Shipping", value: "shipping" },
                         ]
                     }

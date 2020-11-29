@@ -1,11 +1,13 @@
 .contact
     .canvas
         align-items: flex-start
+        margin-bottom 6rem
         .content
-            margin 10rem 0
             justify-content: center
+            +min(2)
+                margin 10rem 0
             .form-advice
-                margin-bottom 2rem
+                margin-bottom 3rem
                 p
                     width 85%
                     margin 0 auto
@@ -17,3 +19,14 @@
                         width 55%
                     +min(3)
                         width 40%
+
+// success/failure pages
+body[class^="contact-"]
+    main
+        .content
+            h1
+                width 100%
+                text-align center
+            h4
+                width 100%
+                text-align center

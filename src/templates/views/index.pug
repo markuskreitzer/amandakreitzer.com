@@ -4,6 +4,7 @@ extends ../_/body
 block context
     - bodyId = 'home';
     - bodyClass = 'home';
+    - slidesPath = '/assets/images/gallery/_linked/_verbatim/';
 
 //- body
 block main
@@ -23,9 +24,12 @@ block main
                         li: a(href="/about") About
                         li: a(href="/contact") Contact
 
-                img(srcset="/assets/images/home/_link/woman-having-tea--S.jpg 650w, " +
-                           "/assets/images/home/_link/woman-having-tea--M.jpg 1300w, " +
-                           "/assets/images/home/_link/woman-having-tea--L.jpg 2600w"
-                    sizes="(min-width: 1200px) 50vw, 100vw"
-                    src="/assets/images/home/_link/woman-having-tea-1300w.jpg"
-                    alt="An oil on canvas painting by Amanda Kreitzer of a woman having tea.")
+                +carousel-1({
+                    slides: [
+                        { path: `${ slidesPath }42.webp`, active: true },
+                        { path: `${ slidesPath }21.webp`  },
+                        { path: `${ slidesPath }44.webp` },
+                        { path: `${ slidesPath }15.webp` },
+                        { path: `${ slidesPath }35.webp`  },
+                    ]
+                })

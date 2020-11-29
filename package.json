@@ -1,5 +1,5 @@
 {
-  "name": "amandakreitzer",
+  "name": "amanda-kreitzer",
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_ENV=development gulp",
@@ -13,13 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:amandakreitzer/amandakreitzer.git"
+    "url": "https://github.com/cygnuls/amandakreitzer.com.git"
   },
   "private": true,
   "license": "UNLICENSED",
   "homepage": "https://amandakreitzer.com",
   "author": "Gideon Kreitzer <gideon@cygnul.com>",
-  "description": "Homepage of artist Amanda Kreitzer.",
+  "description": "Online gallery of artist Amanda Kreitzer.",
   "config": {
     "host": "0.0.0.0",
     "port": 3000,

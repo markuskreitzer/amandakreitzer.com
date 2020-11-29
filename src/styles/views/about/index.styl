@@ -1,19 +1,35 @@
 .about
     .canvas
         align-items: flex-start
+        margin-bottom 5rem
         .content
-            margin 10rem 0
             justify-content: center
+            +min(2)
+                margin 10rem 0
             article
-                column-count: 3
-                column-gap: 8rem
-                column-rule: 1px solid _85
+                +max(1)
+                    margin 0 2rem
+                    text-align center
+                +min(1)
+                    column-count: 2
+                    column-gap: 8rem
+                    column-rule: 1px solid _85
+                +min(2)
+                    column-count: 3
+                    column-gap: 8rem
+                    column-rule: 1px solid _85
                 img
                     margin 1.5rem 0
                     border-radius 3px
                 p
-                    dropcap('', 4.3rem, '', '', .6rem .45rem 0 -.3rem)
                     font-size 1.15rem
+                    +min(1)
+                        dropcap('', 4.3rem, '', '', .6rem .35rem 0 0)
+                    .date
+                        font-weight 600
             hr
-                margin: 7rem 0 0
+                display none
                 hr-gradient to right, rgba(0,0,0,.02), _85 50%, rgba(0,0,0,.02) 100%
+                +min(2)
+                    display block
+                    margin: 7rem 0 0

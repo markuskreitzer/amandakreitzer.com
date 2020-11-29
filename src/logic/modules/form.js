@@ -17,14 +17,15 @@ export default class Mailbox {
         failure,
     }) {
         // begin constructor body
-        // "form" identifies the <form> element in the current
-        // document that should be the subject of this script.
-        this.form = form;
+        //
         // "id" identifies this form to Google's reCAPTCHA service
         // in its "action" field and is therefore restricted to
         // containing certain characters: [A-Za-z/_] It may also be
         // used to identify the form on the server side.
         this.id = id;
+        // "form" identifies the <form> element as a selector that is
+        // the intended target of an instance of this class.
+        this.form = form;
         // "carrier" conveys the transport method (XHR or Fetch)
         this.carrier = carrier;
         // "destination" is the FQDN or path (if on the same host)
@@ -84,8 +85,10 @@ export default class Mailbox {
 
     // separate error messaging for the XMLHttpRequest API
     get xhrError() {
+        /* eslint-disable no-undef */
         return `Error sending message: ${ request.response }
                 Status: ${ request.statusText }`;
+        /* eslint-enable no-undef */
     }
 
     addSpamService() {
@@ -110,8 +113,10 @@ export default class Mailbox {
         return new Promise(resolve => {
 
             // Google reCAPTCHA API
+            /* eslint-disable no-undef */
             grecaptcha.ready(() => {
                 grecaptcha.execute(this.recaptcha,
+                /* eslint-enable no-undef */
                     {
                         // identify action for server use
                         action: this.id
@@ -143,7 +148,7 @@ export default class Mailbox {
         // if defined, run "busy" callback
         if (isFunction(this.progress)) this.progress(response);
         // otherwise print a status update
-        // eslint-disable-next-line
+        // eslint-disable-next-line no-console
         else console.info('Sending the message...');
     }
 
@@ -165,7 +170,7 @@ export default class Mailbox {
             if (isFunction(this.success)) return this.success(response);
             else return window.location.replace(this.success);
         }
-        // eslint-disable-next-line
+        // eslint-disable-next-line no-console
         console.info('Success: message delivered.');
     }
 
@@ -241,7 +246,7 @@ export default class Mailbox {
                 return formData;
             })
             .then(formData => {
-                // did the user opt for the XHR transport?
+            // did the user opt for the XHR transport?
                 if (this.carrier === 'xhr') this.xhr(formData);
                 // if not, use Fetch as the default API
                 else this.fetch(formData);

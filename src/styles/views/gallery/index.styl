@@ -1,27 +1,41 @@
-gallery_column_width = gallery_cw = 212px
+gallery_column_width_breakpoint_0 = gallery_cwb_0 = 34vw
+gallery_column_width_breakpoint_0 = gallery_cwb_1 = 22vw
+gallery_column_width_breakpoint_0 = gallery_cwb_2 = 14vw
+gallery_column_width_breakpoint_0 = gallery_cwb_3 = 212px
 
 .gallery
     .canvas
         align-items: flex-start
         +nav-1()
-            margin-bottom 7rem
+            margin 5rem 0
         .content
-            margin 10rem 0
             justify-content: center
+            +min(2)
+                margin 10rem 0
             .grid
                 display: grid
                 grid-auto-flow: row
                 grid-template-rows: auto
-                grid-template-columns: repeat(3, gallery_cw)
-                column-gap: 2rem
+                grid-template-columns: repeat(2, gallery_cwb_0)
+                column-gap: 7.5vw
                 row-gap @column-gap
+                +min(1)
+                    column-gap: 5vw
+                    row-gap @column-gap
+                    grid-template-columns: repeat(3, gallery_cwb_1)
                 +min(2)
-                    grid-template-columns: repeat(4, gallery_cw)
+                    column-gap: 2.8vw
+                    row-gap @column-gap
+                    grid-template-columns: repeat(4, gallery_cwb_2)
                 +min(3)
-                    grid-template-columns: repeat(5, gallery_cw)
+                    column-gap: rem(38px)
+                    row-gap @column-gap
+                    grid-template-columns: repeat(5, gallery_cwb_3)
                 .item
+                    min-width 110px
                     .thumbnail
                         display flex
+                        align-items flex-start
                         position: relative
                         border-radius: 3px
                         background: _55
@@ -43,7 +57,7 @@ gallery_column_width = gallery_cw = 212px
                             opacity .65
                             font-size 1.1rem
                             text-shadow 1px 1px 2px rgba(0,0,0,0.8)
-                            z-index 3
+                            z-index 2
                         &-title
                             display: flex
                             position: absolute
@@ -52,15 +66,25 @@ gallery_column_width = gallery_cw = 212px
                             opacity 0
                             top: 0
                             left: @top
-                            width: gallery_cw
+                            width: gallery_cwb_0
                             height: @width
                             padding: 1rem
+                            text-align center
                             text-shadow -2px 2px 6px rgba(0,0,0,0.5)
                             border-radius: 3px
                             background: radial-gradient(
                                 rgba(0,0,0,0.2) 0%,
                                 rgba(0,0,0,0.8) 100%)
                             z-index 2
+                            +min(1)
+                                width: gallery_cwb_1
+                                height: @width
+                            +min(2)
+                                width: gallery_cwb_2
+                                height: @width
+                            +min(3)
+                                width: gallery_cwb_3
+                                height: @width
                     &.sold .thumbnail
                         &::before, &::after
                             position absolute
@@ -94,15 +118,21 @@ gallery_column_width = gallery_cw = 212px
                         top: 0
                         left @top
                         opacity 0
-                        align-items center
+                        align-items flex-start
                         justify-content center
-                        background rgba(0,0,0,.86)
+                        background _100
                         transition: opacity .5s ease
                         pointer-events none
+                        +min(2)
+                            align-items center
+                            background rgba(0,0,0,.86)
                         &:target
                             opacity 1
                             z-index 4
+                            overflow: scroll
                             pointer-events: auto
+                            +min(2)
+                                overflow: hidden
                             & figure
                                 transform: scale(1)
                         .close
@@ -116,8 +146,8 @@ gallery_column_width = gallery_cw = 212px
                                 cursor default
                             &::after
                                 display flex
-                                position absolute
-                                top 2rem
+                                position fixed
+                                top 1rem
                                 right @top
                                 size(2.8rem)
                                 content '×'
@@ -125,56 +155,92 @@ gallery_column_width = gallery_cw = 212px
                                 cursor pointer
                                 align-items center
                                 justify-content center
-                                color rgba(255,255,255,0.2)
-                                border-radius 3px
+                                color rgba(255,255,255,0.6)
+                                border-radius 50%
                                 transition all 200ms linear
-                                box-shadow inset 0 0 5px rgba(0,0,0,0.6)
-                                background rgba(0,0,0,0.5)
+                                box-shadow inset 0 0 5px rgba(0,0,0,0.4)
+                                background rgba(0,0,0,0.3)
                                 z-index 1
+                                +min(2)
+                                    position: absolute
+                                    top 2rem
+                                    right @top
+                                    border-radius 3px
+                                    color rgba(255,255,255,0.2)
+                                    background rgba(0,0,0,0.5)
                             &:hover::after
                                 color rgba(255,255,255,0.6)
                         figure
                             transform: scale(0)
                             transition: .5s ease
+                            +max(2)
+                                display flex
+                                height 100%
+                                flex-direction: column
                             img
-                                width auto
-                                max-height 60vh
-                                border-radius: 5px
-                                border 1px solid rgba(255, 255, 255, .6)
-                                box-shadow -5px 5px 10px rgba(0,0,0,0.4)
+                                display block
+                                width 100%
+                                height auto
+                                margin 0 auto
+                                +min(2)
+                                    width auto
+                                    max-height 65vh
+                                    border-radius: 5px
+                                    border 1px solid rgba(255, 255, 255, .6)
+                                    box-shadow -5px 5px 10px rgba(0,0,0,0.4)
                             figcaption
                                 display flex
                                 flex-flow row wrap
-                                justify-content space-between
-                                margin-top 1.3rem
-                                padding 1.3rem 1.9rem 1.7rem
+                                justify-content center
+                                padding 1.8rem 0
                                 font-style normal
-                                border-radius: 3px
                                 background _100
-                                box-shadow -5px 5px 10px rgba(0,0,0,0.4)
+                                +max(2)
+                                    flex 1
+                                +min(2)
+                                    min-width rem(810px)
+                                    justify-content space-between
+                                    margin-top 1.3rem
+                                    padding 1.3rem 1.9rem 1.7rem
+                                    border-radius: 3px
+                                    box-shadow -5px 5px 10px rgba(0,0,0,0.4)
                                 .meta
-                                    width 80%
-                                    text-align left
+                                    width 100%
+                                    text-align center
+                                    +min(2)
+                                        width 80%
+                                        text-align left
                                     &-inner
                                         display flex
                                         flex-flow row wrap
-                                        margin-top 1rem
-                                        padding-top: @margin-top
+                                        margin-top 2rem
+                                        padding-top: 2.4rem
+                                        text-align left
                                         border-top: 1px solid _80
-                                        dl:nth-of-type(even)
-                                            margin: 0 1.2rem
-                                            padding: @margin
-                                            border: 1px solid _80
-                                            border-top: 0
-                                            border-bottom: 0
-                                            &:last-of-type
-                                                margin-right 0
-                                                padding-right 0
-                                                border-right 0
+                                        +min(2)
+                                            margin-top 1rem
+                                            padding-top: @margin-top
+                                        dl
+                                            +max(2)
+                                                width 50%
+                                                margin-bottom 1rem
+                                                text-align center
+                                            +min(2)
+                                                &:nth-of-type(even)
+                                                    margin: 0 1.2rem
+                                                    padding: @margin
+                                                    border: 1px solid _80
+                                                    border-top: 0
+                                                    border-bottom: 0
+                                                    &:last-of-type
+                                                        margin-right 0
+                                                        padding-right 0
+                                                        border-right 0
                                         dt
                                             font-weight 600
-                                            font-size .9rem
                                             text-transform uppercase
+                                            +min(2)
+                                                font-size .9rem
                                         dd
                                             font-size 1.1rem
                                             padding-top .4rem
@@ -185,29 +251,56 @@ gallery_column_width = gallery_cw = 212px
                                             display block
                                             font-size 1.6rem
                                             font-weight 600
+                                            margin-bottom .5rem
+                                            +min(2)
+                                                margin-bottom: 0
                                         &.id
                                         &.artist
-                                            font-size .9rem
+                                            font-size 1rem
+                                            +min(2)
+                                                font-size .9rem
                                         &.artist::after
                                             content '\00A0\00A0\00B7\00A0\00A0'
                                 .actions
                                     display flex
                                     flex-flow row wrap
+                                    align-content flex-end
                                     .price
                                         width 100%
-                                        color darkred
-                                        font-size 1.4rem
-                                        align-self center
+                                        font-size 1.6rem
+                                        font-weight 700
                                     .buy
                                         width 100%
-                                .buy
-                                    button(
-                                        type: 'fill',
-                                        color: _20,
-                                        rounded: true,
-                                        font-size: .9rem,
-                                        padding: 0,
-                                        border-width: 1px
-                                    )
-                                    font-weight: 600
-                                    text-transform: uppercase
+                                        align-self center
+                                        margin-top 1rem
+                                        button(
+                                            type: 'fill',
+                                            color: _20,
+                                            rounded: true,
+                                            font-size: 1rem,
+                                            padding: 1.3rem 0,
+                                            border-width: 1px
+                                        )
+                                        font-weight: 600
+                                        text-transform: uppercase
+                    &.sold .actions
+                        .price
+                            color #a35f55
+                            font-weight bold
+                            text-transform uppercase
+                        .buy
+                            position relative
+                            background _65 !important
+                            transition none !important
+                            pointer-events none
+                            &::after
+                                position absolute
+                                bottom 0
+                                left 0
+                                content ''
+                                width 6.5rem
+                                height .5px
+                                transform-origin 0%
+                                transform rotate(-33deg)
+                                background _100
+

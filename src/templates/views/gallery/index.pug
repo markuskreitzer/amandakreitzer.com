@@ -8,12 +8,18 @@ block context
         pageTitle = 'Gallery | Amanda Kreitzer';
 
         artist = 'Artist: Amanda Kreitzer';
-        pathImages = '/assets/images/gallery/_link/';
-        iterationsBuy = [1,2,3,14,35,6,1,232,3,4,5,6,2,3,4,5,6];
-        iterationsSold = [11,12,13,14,15,11,12,13,14,15];
+        pathImages = '/assets/images/gallery/_linked/_verbatim/';
+        imgThumbWidth = '100%';
+        imgThumbHeight = 'auto';
+        imgWidth = '100%';
+        imgHeight = 'auto';
 
 block header
     +header-3("/", "", "Amanda Kreitzer", [
+        {
+            href: "/",
+            name: "Home"
+        },
         {
             href: "/gallery",
             name: "Gallery"
@@ -41,113 +47,1938 @@ block main
 
                 .grid
 
-                    each count in iterationsBuy
+                    include _/50
+                    include _/49
+                    include _/48
+                    include _/47
+                    include _/46
+                    include _/45
+                    include _/44
+                    include _/43
+                    include _/42
+                    include _/41
+                    include _/40
+                    include _/39
+                    include _/38
+                    include _/37
+                    include _/36
+                    include _/35
 
-                        .item
+                    .item
 
-                            a.thumbnail(href=`#${ count }`)
-                                img.thumbnail-image(src=`${ pathImages }1_thumb.jpg` alt="thumbnail")
-                                span.thumbnail-title Woman with cup
-                                span.thumbnail-id #{ count }
+                        a.thumbnail(href="#34")
+                            img.thumbnail-image(
+                                src=`${ pathImages }34_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 34
 
-                            .modal(id=`${ count }`)
+                        .modal(id="34")
 
-                                a.close(href="#")
+                            a.close(href="#")
 
-                                figure
+                            figure
 
-                                    img(src=`${ pathImages }1.jpg`
-                                        width="100%" height="auto"
-                                        alt=`Lady with coffee. ${ artist }`)
+                                img(src=`${ pathImages }34.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
 
-                                    figcaption
+                                figcaption
 
-                                        .meta
-                                            span.title Woman with cup
-                                            span.artist by Amanda Kreitzer
-                                            span.id Art. ##{ count }
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #34
 
-                                            .meta-inner
+                                        .meta-inner
 
-                                                dl
-                                                    dt released
-                                                    dd 2020
-                                                dl
-                                                    dt medium
-                                                    dd Oil
-                                                dl
-                                                    dt substrate
-                                                    dd Canvas
-                                                dl
-                                                    dt framed
-                                                    dd Yes
-                                                dl
-                                                    dt width
-                                                    dd 24" (72cm)
-                                                dl
-                                                    dt height
-                                                    dd 15" (35cm)
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
 
-                                        .actions
-                                            span.price
-                                                | $8200
-                                                sup .00
+                                    .actions
+                                        span.price
+                                            | $8200
+                                            sup .00
 
-                                            button.buy Buy
+                                        a(href="/contact/" class="buy") Buy
 
-                    each count in iterationsSold
+                    .item
 
-                        .item.sold
+                        a.thumbnail(href="#33")
+                            img.thumbnail-image(
+                                src=`${pathImages}33_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 33
 
-                            a.thumbnail(href=`#${ count }`)
-                                img.thumbnail-image(src=`${ pathImages }1_thumb.jpg` alt="thumbnail")
-                                span.thumbnail-title Woman with cup
-                                span.thumbnail-id #{ count }
+                        .modal(id="33")
 
-                            .modal(id=`${ count }`)
+                            a.close(href="#")
 
-                                a.close(href="#")
+                            figure
 
-                                figure
+                                img(src=`${pathImages}33.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
 
-                                    img(src=`${ pathImages }1.jpg`
-                                        width="100%" height="auto"
-                                        alt=`Lady with coffee. ${ artist }`)
+                                figcaption
 
-                                    figcaption
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #34
 
-                                        .meta
-                                            span.title Woman with cup
-                                            span.artist by Amanda Kreitzer
-                                            span.id Art. ##{ count }
+                                        .meta-inner
 
-                                            .meta-inner
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
 
-                                                dl
-                                                    dt released
-                                                    dd 2020
-                                                dl
-                                                    dt medium
-                                                    dd Oil
-                                                dl
-                                                    dt substrate
-                                                    dd Canvas
-                                                dl
-                                                    dt framed
-                                                    dd Yes
-                                                dl
-                                                    dt width
-                                                    dd 24" (72cm)
-                                                dl
-                                                    dt height
-                                                    dd 15" (35cm)
+                                    .actions
+                                        span.price
+                                            | $8200
+                                            sup .00
 
-                                        .actions
-                                            span.price
-                                                | $8200
-                                                sup .00
+                                        a(href="/contact/" class="buy") Buy
 
-                                            button.buy Buy
+
+                    .item
+
+                        a.thumbnail(href="#32")
+                            img.thumbnail-image(
+                                src=`${pathImages}32_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 32
+
+                        .modal(id="32")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}32.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #32
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price
+                                            | $8200
+                                            sup .00
+
+                                        a(href="/contact/" class="buy") Buy
+
+
+                    .item.sold
+
+                        a.thumbnail(href="#31")
+                            img.thumbnail-image(
+                                src=`${pathImages}31_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 31
+
+                        .modal(id="31")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}31.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #31
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+
+                    .item.sold
+
+                        a.thumbnail(href="#30")
+                            img.thumbnail-image(
+                                src=`${pathImages}30_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 30
+
+                        .modal(id="30")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}30.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #30
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#29")
+                            img.thumbnail-image(
+                                src=`${pathImages}29_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 29
+
+                        .modal(id="29")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}29.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #29
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#28")
+                            img.thumbnail-image(
+                                src=`${pathImages}28_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 28
+
+                        .modal(id="28")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}28.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #28
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#27")
+                            img.thumbnail-image(
+                                src=`${pathImages}27_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 27
+
+                        .modal(id="27")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}27.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #27
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#26")
+                            img.thumbnail-image(
+                                src=`${pathImages}26_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 26
+
+                        .modal(id="26")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}26.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #26
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#25")
+                            img.thumbnail-image(
+                                src=`${pathImages}25_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 25
+
+                        .modal(id="25")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}25.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #25
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#24")
+                            img.thumbnail-image(
+                                src=`${pathImages}24_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 24
+
+                        .modal(id="24")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}24.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #24
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#23")
+                            img.thumbnail-image(
+                                src=`${pathImages}23_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 23
+
+                        .modal(id="23")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}23.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #23
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#22")
+                            img.thumbnail-image(
+                                src=`${pathImages}22_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 22
+
+                        .modal(id="22")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}22.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #22
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#21")
+                            img.thumbnail-image(
+                                src=`${pathImages}21_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 21
+
+                        .modal(id="21")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}21.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #21
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#20")
+                            img.thumbnail-image(
+                                src=`${pathImages}20_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 20
+
+                        .modal(id="20")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}20.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #20
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#19")
+                            img.thumbnail-image(
+                                src=`${pathImages}19_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 19
+
+                        .modal(id="19")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}19.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #19
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#18")
+                            img.thumbnail-image(
+                                src=`${pathImages}18_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 18
+
+                        .modal(id="18")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}18.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #18
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#17")
+                            img.thumbnail-image(
+                                src=`${pathImages}17_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 17
+
+                        .modal(id="17")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}17.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #17
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#16")
+                            img.thumbnail-image(
+                                src=`${pathImages}16_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 16
+
+                        .modal(id="16")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}16.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #16
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#15")
+                            img.thumbnail-image(
+                                src=`${pathImages}15_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 15
+
+                        .modal(id="15")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}15.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #15
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#14")
+                            img.thumbnail-image(
+                                src=`${pathImages}14_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 14
+
+                        .modal(id="14")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}14.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #14
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#13")
+                            img.thumbnail-image(
+                                src=`${pathImages}13_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 13
+
+                        .modal(id="13")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}13.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #13
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#12")
+                            img.thumbnail-image(
+                                src=`${pathImages}12_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 12
+
+                        .modal(id="12")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}12.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #12
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#11")
+                            img.thumbnail-image(
+                                src=`${pathImages}11_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 11
+
+                        .modal(id="11")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}11.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #11
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#10")
+                            img.thumbnail-image(
+                                src=`${pathImages}10_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 10
+
+                        .modal(id="10")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}10.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #10
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#9")
+                            img.thumbnail-image(
+                                src=`${pathImages}9_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 9
+
+                        .modal(id="9")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}9.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #9
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#8")
+                            img.thumbnail-image(
+                                src=`${pathImages}8_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 8
+
+                        .modal(id="8")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}8.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #8
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#7")
+                            img.thumbnail-image(
+                                src=`${pathImages}7_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 7
+
+                        .modal(id="7")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}7.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #7
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#6")
+                            img.thumbnail-image(
+                                src=`${pathImages}6_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 6
+
+                        .modal(id="6")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}6.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #6
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#5")
+                            img.thumbnail-image(
+                                src=`${pathImages}5_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 5
+
+                        .modal(id="5")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}5.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #5
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#4")
+                            img.thumbnail-image(
+                                src=`${pathImages}4_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 1
+
+                        .modal(id="4")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}4.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #4
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#3")
+                            img.thumbnail-image(
+                                src=`${pathImages}3_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 3
+
+                        .modal(id="3")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}3.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #3
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#2")
+                            img.thumbnail-image(
+                                src=`${pathImages}2_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 2
+
+                        .modal(id="2")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}2.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #2
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
+
+                    .item.sold
+
+                        a.thumbnail(href="#1")
+                            img.thumbnail-image(
+                                src=`${pathImages}1_thumb.webp`
+                                width= imgThumbWidth
+                                height= imgThumbHeight
+                                loading="lazy"
+                                alt="thumbnail")
+                            span.thumbnail-title Woman with cup
+                            span.thumbnail-id 1
+
+                        .modal(id="1")
+
+                            a.close(href="#")
+
+                            figure
+
+                                img(src=`${pathImages}1.webp`
+                                    width= imgWidth
+                                    height= imgHeight
+                                    loading="lazy"
+                                    alt="Lady with coffee.")
+
+                                figcaption
+
+                                    .meta
+                                        span.title Woman with cup
+                                        span.artist by Amanda Kreitzer
+                                        span.id Art. #1
+
+                                        .meta-inner
+
+                                            dl
+                                                dt released
+                                                dd 2020
+                                            dl
+                                                dt medium
+                                                dd Oil
+                                            dl
+                                                dt substrate
+                                                dd Canvas
+                                            dl
+                                                dt framed
+                                                dd Yes
+                                            dl
+                                                dt width
+                                                dd 24" (72cm)
+                                            dl
+                                                dt height
+                                                dd 15" (35cm)
+
+                                    .actions
+                                        span.price Sold
+                                        a(href="#" class="buy") Buy
 
             +nav-1({
                 target: "gallery",

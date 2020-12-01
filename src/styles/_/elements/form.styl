@@ -1,1 +1,7 @@
 form-1(button-type: '3d')
+
+// Hide Google reCaptcha badge on
+// small viewports to improve UX.
+.grecaptcha-badge
+    +max(1)
+        display: none

@@ -283,10 +283,15 @@ gallery_column_width_breakpoint_0 = gallery_cwb_3 = 212px
                                     display flex
                                     flex-flow row wrap
                                     align-content flex-end
-                                    .price
+                                    .status, .price
                                         width 100%
                                         font-size 1.6rem
                                         font-weight 700
+                                    .status
+                                        color #a35f55
+                                        font-weight bold
+                                        text-transform uppercase
+                                        display none
                                     .buy
                                         width 100%
                                         align-self center
@@ -302,10 +307,10 @@ gallery_column_width_breakpoint_0 = gallery_cwb_3 = 212px
                                         font-weight: 600
                                         text-transform: uppercase
                     &.sold .actions
+                        .status
+                            display: block !important
                         .price
-                            color #a35f55
-                            font-weight bold
-                            text-transform uppercase
+                            display: none
                         .buy
                             position relative
                             background _65 !important

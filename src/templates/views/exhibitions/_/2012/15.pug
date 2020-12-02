@@ -1,0 +1,43 @@
+-
+    exhibition = 'Kleinevalleij';
+    year = '2012';
+    title = 'Title to be confirmed';
+    imgWidth = '100%';
+    imgHeight = 'auto';
+    imgThumbWidth = '100%';
+    imgThumbHeight = 'auto';
+    pathImages = '/assets/images/exhibitions/2012/_linked/_verbatim/';
+
+    id = 15;
+
+.item
+
+    a.thumbnail(href=`#${ id }`)
+
+        img.thumbnail-image(
+            src=`${ pathImages }${ id }.webp`
+            width= imgThumbWidth
+            height= imgThumbHeight
+            loading="lazy"
+            alt="image thumbnail")
+
+        span.thumbnail-title= title
+
+    .modal(id= id)
+
+        a.close(href="#")
+
+        figure
+
+            img(src=`${ pathImages }${ id }.webp`
+                width= imgWidth
+                height= imgHeight
+                loading="lazy"
+                alt= title)
+
+            figcaption
+
+                .meta
+                    span.meta_title= title
+                    span.meta_year= year
+                    span.meta_exhibition= exhibition

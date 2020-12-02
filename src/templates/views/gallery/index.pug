@@ -14,26 +14,6 @@ block context
         imgWidth = '100%';
         imgHeight = 'auto';
 
-block header
-    +header-3("/", "", "Amanda Kreitzer", [
-        {
-            href: "/",
-            name: "Home"
-        },
-        {
-            href: "/gallery",
-            name: "Gallery"
-        },
-        {
-            href: "/about",
-            name: "About"
-        },
-        {
-            href: "/contact",
-            name: "Contact"
-        }
-    ])
-
 //- body
 block main
 
@@ -64,11 +44,11 @@ block main
                     include _/36
                     include _/35
 
-                    .item
+                    .item.sold
 
                         a.thumbnail(href="#34")
                             img.thumbnail-image(
-                                src=`${ pathImages }34_thumb.webp`
+                                src=`${ pathImages }34.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -123,11 +103,11 @@ block main
 
                                         a(href="/contact/" class="buy") Contact
 
-                    .item
+                    .item.sold
 
                         a.thumbnail(href="#33")
                             img.thumbnail-image(
-                                src=`${pathImages}33_thumb.webp`
+                                src=`${pathImages}33.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -183,11 +163,11 @@ block main
                                         a(href="/contact/" class="buy") Contact
 
 
-                    .item
+                    .item.sold
 
                         a.thumbnail(href="#32")
                             img.thumbnail-image(
-                                src=`${pathImages}32_thumb.webp`
+                                src=`${pathImages}32.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -247,7 +227,7 @@ block main
 
                         a.thumbnail(href="#31")
                             img.thumbnail-image(
-                                src=`${pathImages}31_thumb.webp`
+                                src=`${pathImages}31.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -304,7 +284,7 @@ block main
 
                         a.thumbnail(href="#30")
                             img.thumbnail-image(
-                                src=`${pathImages}30_thumb.webp`
+                                src=`${pathImages}30.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -360,7 +340,7 @@ block main
 
                         a.thumbnail(href="#29")
                             img.thumbnail-image(
-                                src=`${pathImages}29_thumb.webp`
+                                src=`${pathImages}29.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -416,7 +396,7 @@ block main
 
                         a.thumbnail(href="#28")
                             img.thumbnail-image(
-                                src=`${pathImages}28_thumb.webp`
+                                src=`${pathImages}28.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -472,7 +452,7 @@ block main
 
                         a.thumbnail(href="#27")
                             img.thumbnail-image(
-                                src=`${pathImages}27_thumb.webp`
+                                src=`${pathImages}27.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -528,7 +508,7 @@ block main
 
                         a.thumbnail(href="#26")
                             img.thumbnail-image(
-                                src=`${pathImages}26_thumb.webp`
+                                src=`${pathImages}26.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -584,7 +564,7 @@ block main
 
                         a.thumbnail(href="#25")
                             img.thumbnail-image(
-                                src=`${pathImages}25_thumb.webp`
+                                src=`${pathImages}25.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -640,7 +620,7 @@ block main
 
                         a.thumbnail(href="#24")
                             img.thumbnail-image(
-                                src=`${pathImages}24_thumb.webp`
+                                src=`${pathImages}24.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -696,7 +676,7 @@ block main
 
                         a.thumbnail(href="#23")
                             img.thumbnail-image(
-                                src=`${pathImages}23_thumb.webp`
+                                src=`${pathImages}23.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -752,7 +732,7 @@ block main
 
                         a.thumbnail(href="#22")
                             img.thumbnail-image(
-                                src=`${pathImages}22_thumb.webp`
+                                src=`${pathImages}22.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -808,7 +788,7 @@ block main
 
                         a.thumbnail(href="#21")
                             img.thumbnail-image(
-                                src=`${pathImages}21_thumb.webp`
+                                src=`${pathImages}21.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -864,7 +844,7 @@ block main
 
                         a.thumbnail(href="#20")
                             img.thumbnail-image(
-                                src=`${pathImages}20_thumb.webp`
+                                src=`${pathImages}20.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -920,7 +900,7 @@ block main
 
                         a.thumbnail(href="#19")
                             img.thumbnail-image(
-                                src=`${pathImages}19_thumb.webp`
+                                src=`${pathImages}19.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -976,7 +956,7 @@ block main
 
                         a.thumbnail(href="#18")
                             img.thumbnail-image(
-                                src=`${pathImages}18_thumb.webp`
+                                src=`${pathImages}18.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1032,7 +1012,7 @@ block main
 
                         a.thumbnail(href="#17")
                             img.thumbnail-image(
-                                src=`${pathImages}17_thumb.webp`
+                                src=`${pathImages}17.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1088,7 +1068,7 @@ block main
 
                         a.thumbnail(href="#16")
                             img.thumbnail-image(
-                                src=`${pathImages}16_thumb.webp`
+                                src=`${pathImages}16.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1144,7 +1124,7 @@ block main
 
                         a.thumbnail(href="#15")
                             img.thumbnail-image(
-                                src=`${pathImages}15_thumb.webp`
+                                src=`${pathImages}15.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1200,7 +1180,7 @@ block main
 
                         a.thumbnail(href="#14")
                             img.thumbnail-image(
-                                src=`${pathImages}14_thumb.webp`
+                                src=`${pathImages}14.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1256,7 +1236,7 @@ block main
 
                         a.thumbnail(href="#13")
                             img.thumbnail-image(
-                                src=`${pathImages}13_thumb.webp`
+                                src=`${pathImages}13.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1312,7 +1292,7 @@ block main
 
                         a.thumbnail(href="#12")
                             img.thumbnail-image(
-                                src=`${pathImages}12_thumb.webp`
+                                src=`${pathImages}12.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1368,7 +1348,7 @@ block main
 
                         a.thumbnail(href="#11")
                             img.thumbnail-image(
-                                src=`${pathImages}11_thumb.webp`
+                                src=`${pathImages}11.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1424,7 +1404,7 @@ block main
 
                         a.thumbnail(href="#10")
                             img.thumbnail-image(
-                                src=`${pathImages}10_thumb.webp`
+                                src=`${pathImages}10.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1480,7 +1460,7 @@ block main
 
                         a.thumbnail(href="#9")
                             img.thumbnail-image(
-                                src=`${pathImages}9_thumb.webp`
+                                src=`${pathImages}9.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1536,7 +1516,7 @@ block main
 
                         a.thumbnail(href="#8")
                             img.thumbnail-image(
-                                src=`${pathImages}8_thumb.webp`
+                                src=`${pathImages}8.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1592,7 +1572,7 @@ block main
 
                         a.thumbnail(href="#7")
                             img.thumbnail-image(
-                                src=`${pathImages}7_thumb.webp`
+                                src=`${pathImages}7.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1648,7 +1628,7 @@ block main
 
                         a.thumbnail(href="#6")
                             img.thumbnail-image(
-                                src=`${pathImages}6_thumb.webp`
+                                src=`${pathImages}6.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1704,7 +1684,7 @@ block main
 
                         a.thumbnail(href="#5")
                             img.thumbnail-image(
-                                src=`${pathImages}5_thumb.webp`
+                                src=`${pathImages}5.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1760,7 +1740,7 @@ block main
 
                         a.thumbnail(href="#4")
                             img.thumbnail-image(
-                                src=`${pathImages}4_thumb.webp`
+                                src=`${pathImages}4.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1816,7 +1796,7 @@ block main
 
                         a.thumbnail(href="#3")
                             img.thumbnail-image(
-                                src=`${pathImages}3_thumb.webp`
+                                src=`${pathImages}3.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1872,7 +1852,7 @@ block main
 
                         a.thumbnail(href="#2")
                             img.thumbnail-image(
-                                src=`${pathImages}2_thumb.webp`
+                                src=`${pathImages}2.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"
@@ -1928,7 +1908,7 @@ block main
 
                         a.thumbnail(href="#1")
                             img.thumbnail-image(
-                                src=`${pathImages}1_thumb.webp`
+                                src=`${pathImages}1.webp`
                                 width= imgThumbWidth
                                 height= imgThumbHeight
                                 loading="lazy"

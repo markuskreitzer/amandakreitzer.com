@@ -1,0 +1,54 @@
+extends ../../_/body
+
+//- variables
+block context
+    -
+        bodyId = 'exhibitions';
+        bodyClass = 'exhibitions index';
+        pageTitle = 'Exhibitions | Amanda Kreitzer';
+
+        artist = 'Artist: Amanda Kreitzer';
+        pathImages = '/assets/images/gallery/_linked/_verbatim/';
+        imgThumbWidth = '100%';
+        imgThumbHeight = 'auto';
+        imgWidth = '100%';
+        imgHeight = 'auto';
+
+//- body
+block main
+
+    main(role="main")
+
+        .canvas
+
+            .content
+
+                h2.heading-page Exhibitions
+
+                section.exhibition
+
+                    h3.heading-section 2012 — Kleinevalleij
+
+                    .grid
+
+                        include _/2012/1
+                        include _/2012/2
+                        include _/2012/3
+                        include _/2012/4
+                        include _/2012/5
+                        include _/2012/6
+                        include _/2012/7
+                        include _/2012/8
+                        include _/2012/9
+                        include _/2012/10
+                        include _/2012/11
+                        include _/2012/12
+                        include _/2012/13
+                        include _/2012/14
+                        include _/2012/15
+
+            +nav-1({
+                target: "exhibitions",
+                direction: "prev",
+                icon: "nav-1-fill",
+            })

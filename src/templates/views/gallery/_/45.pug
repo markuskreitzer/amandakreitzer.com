@@ -1,5 +1,5 @@
 -
-    artist = 'Artist: Amanda Kreitzer';
+    title = 'Ready, Steady, Sleep';
     pathImages = '/assets/images/gallery/_linked/_verbatim/';
     imgThumbWidth = '100%';
     imgThumbHeight = 'auto';
@@ -8,7 +8,7 @@
 
     id = 45;
 
-.item
+.item.sold
 
     a.thumbnail(href=`#${ id }`)
         img.thumbnail-image(
@@ -17,7 +17,7 @@
             height= imgThumbHeight
             loading="lazy"
             alt="thumbnail")
-        span.thumbnail-title Title to be confirmed
+        span.thumbnail-title= title
         span.thumbnail-id= id
 
     .modal(id= id)
@@ -29,13 +29,13 @@
             img(src=`${ pathImages }${ id }.webp`
                 width= imgWidth
                 height= imgHeight
-                loading="lazy"
-                alt="Lady with coffee.")
+                alt= title
+                loading="lazy")
 
             figcaption
 
                 .meta
-                    span.title Title to be confirmed
+                    span.title= title
                     span.artist by Amanda Kreitzer
                     span.id Art. #{ id }
 
@@ -43,7 +43,7 @@
 
                         dl
                             dt released
-                            dd 2020
+                            dd 2012
                         dl
                             dt medium
                             dd Oil
@@ -55,10 +55,10 @@
                             dd Yes
                         dl
                             dt width
-                            dd 24" (72cm)
+                            dd 14" (35.56cm)
                         dl
                             dt height
-                            dd 15" (35cm)
+                            dd 10" (25.4cm)
 
                 .actions
                     span.status Sold

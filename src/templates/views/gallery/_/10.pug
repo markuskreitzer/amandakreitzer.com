@@ -1,0 +1,69 @@
+-
+    title = 'Amish Games';
+    pathImages = '/assets/images/gallery/_linked/_verbatim/';
+    imgThumbWidth = '100%';
+    imgThumbHeight = 'auto';
+    imgWidth = '100%';
+    imgHeight = 'auto';
+
+    id = 10;
+
+.item.sold
+
+    a.thumbnail(href=`#${ id }`)
+        img.thumbnail-image(
+            src=`${ pathImages }${ id }.webp`
+            width= imgThumbWidth
+            height= imgThumbHeight
+            loading="lazy"
+            alt="thumbnail")
+        span.thumbnail-title= title
+        span.thumbnail-id= id
+
+    .modal(id= id)
+
+        a.close(href="#")
+
+        figure
+
+            img(src=`${ pathImages }${ id }.webp`
+                width= imgWidth
+                height= imgHeight
+                alt= title
+                loading="lazy")
+
+            figcaption
+
+                .meta
+                    span.title= title
+                    span.artist by Amanda Kreitzer
+                    span.id Art. #{ id }
+
+                    .meta-inner
+
+                        dl
+                            dt released
+                            dd 2003
+                        dl
+                            dt medium
+                            dd Oil
+                        dl
+                            dt substrate
+                            dd Wood
+                        dl
+                            dt framed
+                            dd Yes
+                        dl
+                            dt width
+                            dd 30" (76cm)
+                        dl
+                            dt height
+                            dd 20" (51cm)
+
+                .actions
+                    span.status Sold
+                    span.price
+                        | $---
+                        sup .00
+
+                    a(href="/contact/" class="buy") Contact

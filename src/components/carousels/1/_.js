@@ -5,7 +5,7 @@ export default ({
     slide: slideClass = '.slide',
     active: activeClass = '.active',
     container = '.carousel-1',
-}) => {
+} = {}) => {
 
     // first check if the specified container is in document
     if (!document.querySelector(container)) return null;

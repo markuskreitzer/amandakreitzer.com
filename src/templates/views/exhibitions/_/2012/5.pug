@@ -1,43 +1,57 @@
 -
     exhibition = 'Kleinevalleij';
-    year = '2012';
+    series = '2012';
     title = 'Franci Malan enjoying a glass of local sparkling wine.';
     imgWidth = '100%';
     imgHeight = 'auto';
     imgThumbWidth = '100%';
     imgThumbHeight = 'auto';
-    pathImages = '/assets/images/exhibitions/2012/_linked/_verbatim/';
+    pathImagesRaster = '/assets/images/exhibitions/2012/_linked/_verbatim/';
+    pathImagesVector = '/assets/images/_sprites/symbols.svg';
 
-    id = "2012-5";
+    id = 5;
 
-.item
+.gallery-1__item(data-id= id)
 
-    a.thumbnail(href=`#${ id }`)
+    a.gallery-1__thumb(href=`#${ series }-${ id }`)
 
-        img.thumbnail-image(
-            src=`${ pathImages }${ id }.webp`
+        img.gallery-1__thumb-image(
+            src=`${ pathImagesRaster }${ id }.webp`
             width= imgThumbWidth
             height= imgThumbHeight
             loading="lazy"
             alt="image thumbnail")
 
-        span.thumbnail-title= title
+        span.gallery-1__thumb-title= title
 
-    .modal(id= id)
+    .gallery-1__modal(id=`${ series }-${ id }`)
 
-        a.close(href="#")
+        a.gallery-1__modal-close(href="#")
 
-        figure
+        figure.gallery-1__modal-image
 
-            img(src=`${ pathImages }${ id }.webp`
+            img(src=`${ pathImagesRaster }${ id }.webp`
                 width= imgWidth
                 height= imgHeight
-                loading="lazy"
                 alt= title)
 
-            figcaption
+            button(
+                class="gallery-1__modal-nav " +
+                      "gallery-1__modal-nav-left"
+                ): svg: use(xlink:href=`${ pathImagesVector }#gallery-1__modal-nav-left`)
 
-                .meta
-                    span.meta_title= title
-                    span.meta_year= year
-                    span.meta_exhibition= exhibition
+            button(
+                class="gallery-1__modal-nav " +
+                      "gallery-1__modal-nav-right"
+                ): svg: use(xlink:href=`${ pathImagesVector }#gallery-1__modal-nav-right`)
+
+            button(
+                class="gallery-1__modal-nav " +
+                      "gallery-1__modal-nav-pause"
+                )
+
+            figcaption.gallery-1__modal-meta
+
+                span.gallery-1__modal-meta-title= title
+                span.gallery-1__modal-meta-series= series
+                span.gallery-1__modal-meta-exhibition= exhibition

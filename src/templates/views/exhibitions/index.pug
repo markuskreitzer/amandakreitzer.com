@@ -29,7 +29,7 @@ block main
 
                     h3.heading-section 2012 — Kleinevalleij
 
-                    .grid
+                    .gallery-1(data-series="2012")
 
                         include _/2012/1
                         include _/2012/2
@@ -47,21 +47,24 @@ block main
                         include _/2012/14
                         include _/2012/15
 
-                section.exhibition
+                //- TODO: reactivate the following two exhibitions
+                //- once more pictures are retrieved from storage.
 
-                    h3.heading-section 2009 — Simonsvlei Winery
+                //- section.exhibition
+                //-
+                //-     h3.heading-section 2009 — Simonsvlei Winery
+                //-
+                //-     .gallery-1(data-series="2009")
+                //-
+                //-         include _/2009/1
 
-                    .grid
-
-                        include _/2009/1
-
-                section.exhibition
-
-                    h3.heading-section 2005 — Wellington Museum
-
-                    .grid
-
-                        include _/2005/1
+                //- section.exhibition
+                //-
+                //-     h3.heading-section 2005 — Wellington Museum
+                //-
+                //-     .gallery-1(data-series="2005")
+                //-
+                //-         include _/2005/1
 
             +nav-1({
                 target: "exhibitions",

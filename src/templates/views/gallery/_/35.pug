@@ -8,38 +8,37 @@
 
     id = 35;
 
-.item.sold
+.gallery-main__item.gallery-main__item--sold
 
-    a.thumbnail(href=`#${ id }`)
-        img.thumbnail-image(
+    a.gallery-main__thumb(href=`#${ id }`)
+        img.gallery-main__thumb-image(
             src=`${ pathImages }${ id }.webp`
             width= imgThumbWidth
             height= imgThumbHeight
             loading="lazy"
             alt="thumbnail")
-        span.thumbnail-title= title
-        span.thumbnail-id= id
+        span.gallery-main__thumb-title= title
+        span.gallery-main__thumb-id= id
 
-    .modal(id= id)
+    .gallery-main__modal(id= id)
 
-        a.close(href="#")
+        a.gallery-main__modal-close(href="#")
 
-        figure
+        figure.gallery-main__modal-image
 
             img(src=`${ pathImages }${ id }.webp`
                 width= imgWidth
                 height= imgHeight
-                alt= title
-                loading="lazy")
+                alt= title)
 
-            figcaption
+            figcaption.gallery-main__modal-meta
 
-                .meta
-                    span.title= title
-                    span.artist by Amanda Kreitzer
-                    span.id Art. #{ id }
+                .gallery-main__modal-meta-header
+                    span.gallery-main__modal-meta-title= title
+                    span.gallery-main__modal-meta-artist by Amanda Kreitzer
+                    span.gallery-main__modal-meta-id Art. #{ id }
 
-                    .meta-inner
+                    .gallery-main__modal-meta-specs
 
                         dl
                             dt released
@@ -60,10 +59,10 @@
                             dt height
                             dd 15" (38cm)
 
-                .actions
-                    span.status Sold
-                    span.price
+                .gallery-main__modal-meta-actions
+                    span.gallery-main__modal-meta-status Sold
+                    span.gallery-main__modal-meta-price
                         | $---
                         sup .00
 
-                    a(href="/contact/" class="buy") Contact
+                    a.gallery-main__modal-meta-buy(href="/contact/") Contact

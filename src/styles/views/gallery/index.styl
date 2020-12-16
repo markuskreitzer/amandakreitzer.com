@@ -224,7 +224,6 @@ gallery_column_width_breakpoint_0 = gallery_cwb_3 = 212px
                         &-specs
                             display flex
                             flex-flow row wrap
-                            min-width max-content
                             margin-top 2rem
                             padding-top: 2.4rem
                             text-align left
@@ -260,15 +259,14 @@ gallery_column_width_breakpoint_0 = gallery_cwb_3 = 212px
                             display flex
                             flex-flow row wrap
                             align-content flex-end
-                        &-status, &-price
-                            width 100%
-                            font-size 1.6rem
-                            font-weight 700
+                            +max(2)
+                                margin 1rem 0
                         &-status
-                            color #a35f55
-                            font-weight bold
-                            text-transform uppercase
-                            display none
+                            width 100%
+                            //color #284f33
+                            font-size 1.6rem
+                            &::before
+                                content: 'For Sale'
                         &-buy
                             width 100%
                             align-self center
@@ -286,14 +284,14 @@ gallery_column_width_breakpoint_0 = gallery_cwb_3 = 212px
                 // modifications pertaining to sold items
                 &__item--sold
                     .gallery-main__thumb
-                        &::before, &::after
-                            position absolute
-                            transition: opacity .3s ease
-                            z-index 1
                         &:hover
                             &::before
                             &::after
                                 opacity 0
+                        &::before, &::after
+                            position absolute
+                            transition: opacity .3s ease
+                            z-index 1
                         &::before
                             right 0
                             bottom 0
@@ -312,22 +310,13 @@ gallery_column_width_breakpoint_0 = gallery_cwb_3 = 212px
                             text-shadow 1px -1px 0 darken(_50, 38%)
                             text-transform uppercase
                             transform: rotate(-45deg)
+                    .gallery-main__modal-meta-actions
+                        align-content center
                     .gallery-main__modal-meta-status
-                        display: block !important
-                    .gallery-main__modal-meta-price
-                        display: none
+                        color #993d32
+                        display: block
+                        font-weight 600
+                        &::before
+                            content: 'SOLD'
                     .gallery-main__modal-meta-buy
-                        position relative
-                        background _65 !important
-                        transition none !important
-                        pointer-events none
-                        &::after
-                            position absolute
-                            bottom 0
-                            left 0
-                            content ''
-                            width 8.5rem
-                            height .5px
-                            transform-origin 0%
-                            transform rotate(-24deg)
-                            background _100
+                        display none

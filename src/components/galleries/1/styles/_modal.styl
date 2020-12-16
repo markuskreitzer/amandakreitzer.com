@@ -66,16 +66,22 @@
                 background rgba(0,0,0,0.5)
         &:hover::after
             color rgba(255,255,255,0.6)
+    &-image-wrapper
+        position: relative
+        +max(2)
+            display flex
+            height 100%
+            flex-direction: column
+        +min(2)
+            max-height 65vh
+            box-shadow -5px 5px 10px rgba(0,0,0,0.5)
     &-image
         position: relative
         transform: scale(0)
         transition: transform 500ms ease-in
         background rgba(0,0,0,0.8)
-        box-shadow -5px 5px 10px rgba(0,0,0,0.4)
-        +max(2)
-            display flex
-            height 100%
-            flex-direction: column
+        +min(2)
+            border-radius: 5px
         img
             display block
             width 100%
@@ -87,10 +93,7 @@
             transition-property: transform, opacity
             transition-timing-function: ease, ease-in
             +min(2)
-                width auto
-                max-height 65vh
-                border-radius: 3px 3px 0 0
-                border 1px solid rgba(255, 255, 255, .6)
+                border-radius: 5px
         &:hover button[class*=gallery-1__modal-nav] svg
             opacity: 1
         &:hover .gallery-1__modal-nav-pause
@@ -101,26 +104,41 @@
         [data-autoplay="true"] &
             transform: none
     &-meta
+        width 100%
         display flex
         flex-flow row wrap
         justify-content center
+        align-content flex-start
         padding 1.8rem 0
         font-style normal
         background _100
         +max(2)
             flex 1
         +min(2)
-            padding 1.3rem
-            border-radius: 0 0 3px 3px
-            box-shadow -5px 5px 10px rgba(0,0,0,0.4)
-        &-title
+            position: absolute
+            left 50%
+            bottom: rem(45px)
+            padding 0
+            transform: translateX(-50%)
+            color rgba(255, 255, 255, .8)
+            background transparent
+        &-caption
             width 100%
             display block
-            font-size 1.4rem
-            margin-bottom .4em
+            font-size 1.1rem
+            line-height 1.3
+            margin-bottom 1.4em
+            padding 0 2rem
+            +min(1)
+                font-size 1.2rem
+                margin-bottom 1em
+            +min(2)
+                font-size 1.4rem
+                margin-bottom .4em
         &-exhibition, &-series
-            color _50
             font-size 1rem
+            +max(2)
+                color _50
         &-series::after
             content '\00A0\00A0\00B7\00A0\00A0'
     &-nav // dynamically controlled: activates navigation controls

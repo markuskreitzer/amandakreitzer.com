@@ -1,7 +1,7 @@
 -
     exhibition = 'Kleinevalleij';
     series = '2012';
-    title = 'Franci Malan enjoying a glass of local sparkling wine.';
+    caption = 'Franci Malan enjoying a glass of local sparkling wine.';
     imgWidth = '100%';
     imgHeight = 'auto';
     imgThumbWidth = '100%';
@@ -28,31 +28,33 @@
 
         a.gallery-1__modal-close(href="#")
 
-        figure.gallery-1__modal-image
+        figure.gallery-1__modal-image-wrapper
 
-            img(src=`${ pathImagesRaster }${ id }.webp`
-                width= imgWidth
-                height= imgHeight
-                loading="lazy"
-                alt= title)
+            .gallery-1__modal-image
 
-            button(
-                class="gallery-1__modal-nav " +
-                      "gallery-1__modal-nav-left"
-                ): svg: use(xlink:href=`${ pathImagesVector }#gallery-1__modal-nav-left`)
+                img(src=`${ pathImagesRaster }${ id }.webp`
+                    width= imgWidth
+                    height= imgHeight
+                    loading="lazy"
+                    alt= title)
 
-            button(
-                class="gallery-1__modal-nav " +
-                      "gallery-1__modal-nav-right"
-                ): svg: use(xlink:href=`${ pathImagesVector }#gallery-1__modal-nav-right`)
+                button(
+                    class="gallery-1__modal-nav " +
+                          "gallery-1__modal-nav-left"
+                    ): svg: use(xlink:href=`${ pathImagesVector }#gallery-1__modal-nav-left`)
 
-            button(
-                class="gallery-1__modal-nav " +
-                      "gallery-1__modal-nav-pause"
-                )
+                button(
+                    class="gallery-1__modal-nav " +
+                          "gallery-1__modal-nav-right"
+                    ): svg: use(xlink:href=`${ pathImagesVector }#gallery-1__modal-nav-right`)
+
+                button(
+                    class="gallery-1__modal-nav " +
+                          "gallery-1__modal-nav-pause"
+                    )
 
             figcaption.gallery-1__modal-meta
 
-                span.gallery-1__modal-meta-title= title
+                span.gallery-1__modal-meta-caption= caption
                 span.gallery-1__modal-meta-series= series
                 span.gallery-1__modal-meta-exhibition= exhibition

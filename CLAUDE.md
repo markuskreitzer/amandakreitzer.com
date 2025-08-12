@@ -4,77 +4,81 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an artist portfolio website for Amanda Kreitzer, built using Gulp, Pug templates, and Stylus for styling. The site features galleries, exhibitions, and contact functionality.
+Modern React portfolio website for artist Amanda Kreitzer, built with Vite, Tailwind CSS, and Framer Motion. Features an interactive gallery system with easy content management.
 
 ## Development Commands
 
 ```bash
-# Start development server with live reload
-npm start
+# Start development server (auto-generates missing thumbnails)
+npm run dev
 # or
-npm run develop
+npm start
 
-# Build for production
+# Build for production (auto-generates missing thumbnails)
 npm run build
+
+# Generate thumbnails manually
+npm run generate-thumbnails
+
+# Preview production build
+npm run preview
+# or 
+npm run serve
 
 # Run linting
 npm run lint
-
-# Run production server for testing
-npm run serve
-# or
-npm run preflight
-
-# Deploy (builds production)
-npm run deploy
 ```
 
 ## Architecture
 
-### Build System
-- **Gulp 4** orchestrates all build tasks
-- Tasks defined in `settings/gulp/` directory
-- Environment-based configuration via `NODE_ENV` (development/production)
-- Output directories: `dev/` for development, `prd/` for production
+### Tech Stack
+- **React 18** with hooks and functional components
+- **Vite** for fast development and building
+- **React Router** for client-side routing
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Radix UI** for accessible components
 
-### Directory Structure
-- `src/` - Source files
-  - `templates/` - Pug templates
-    - `views/` - Page templates (home, gallery, about, contact, exhibitions)
-    - `_/` - Shared template partials and mixins
-  - `styles/` - Stylus stylesheets
-    - `_/` - Core style modules (colors, mixins, layout, text)
-    - `views/` - Page-specific styles
-  - `logic/` - JavaScript files (uses Rollup for bundling)
-    - `libs/` - Utility libraries
-    - `modules/` - Feature modules
-    - `views/` - Page-specific logic
-  - `components/` - Reusable UI components (headers, footers, galleries, forms, etc.)
-  - `images/` - Image assets organized by section
-  - `fonts/` - Web fonts (Dancing Script, Source Sans Pro)
+### Project Structure
+- `src/components/` - Reusable React components
+  - `Layout/` - Header, Footer, Layout wrapper
+  - `Gallery/` - Gallery grid and modal components
+- `src/pages/` - Page components (Home, Gallery, About, etc.)
+- `src/data/` - Static data and content management
+- `public/artworks/` - Image assets organized by type
 
-### Key Technologies
-- **Templates**: Pug
-- **Styles**: Stylus with PostCSS (autoprefixer, cssnano)
-- **JavaScript**: ES6+ with Babel, bundled with Rollup
-- **Images**: WebP format, SVG sprites for icons
-- **Server**: Browser-sync for development
+### Content Management System
+Artwork data is managed through:
+- `src/data/artworks.js` - Centralized artwork metadata
+- `public/artworks/` - Image file organization
+- Simple JSON structure for adding new pieces
 
-### Component System
-Components are self-contained in `src/components/` with:
-- `_.pug` - Template file
-- `index.styl` - Component styles
-- `_.js` - Component logic (if needed)
-- `images/` - Component-specific images
-- `README.md` - Component documentation
+### Key Features
+- **Responsive Gallery** with lightbox modal and keyboard navigation
+- **Image optimization** with thumbnail support
+- **Smooth animations** using Framer Motion
+- **Mobile-first responsive** design
+- **Accessible** components using Radix UI
 
-### Image Processing
-- `_linked/` - Images served as-is
-- `_verbatim/` - Images copied without processing
-- `_symbols/` - SVG icons for sprite generation
-- `_inline/` - SVGs to be inlined
+### Adding New Artwork
+1. Add high-resolution images to `public/artworks/gallery/`
+2. Update `src/data/artworks.js` with metadata
+3. Thumbnails are generated automatically during build
+4. Follow existing data structure for consistency
 
-### Configuration
-- Environment settings in `settings/index.js`
-- ESLint configs in `settings/eslint/`
-- Babel config in `babel.config.js`
+### Thumbnail Generation
+- **Automatic**: Runs during `npm run dev` and `npm run build`
+- **Manual**: Use `npm run generate-thumbnails`
+- **Smart**: Only creates missing thumbnails
+- **Format**: 400x300px optimized JPEG
+
+### Styling Approach
+- **Tailwind CSS** utility classes
+- **Custom color scheme** in `tailwind.config.js`
+- **Typography**: Dancing Script for headings, Source Sans Pro for body
+- **Responsive breakpoints**: Mobile-first approach
+
+### Build Output
+- Static files in `dist/` directory
+- Deployable to any static hosting service
+- Optimized for performance with Vite's build process

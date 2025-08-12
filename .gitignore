@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Claude Code project files
+CLAUDE.md
+
+# Test results and reports
+test-results/
+playwright-report/
+playwright/.cache/

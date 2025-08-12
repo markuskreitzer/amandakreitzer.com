@@ -1,21 +1,49 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import GalleryGrid from '../components/Gallery/GalleryGrid';
 import { collections } from '../data/artworks';
 
 const Home = () => {
+  // Featured artworks for slideshow (using some of the most striking pieces)
+  const slideshowImages = [
+    '/artworks/67.webp', // Latona and the Rooster (latest)
+    '/artworks/17.webp', // Serendipity — Bontebok Ridge
+    '/artworks/15.webp', // Siblings Forever
+    '/artworks/28.webp', // Stroll
+    '/artworks/46.webp', // Tea Time Reverie
+    '/artworks/56.webp', // The Giant From Jersey
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % slideshowImages.length
+      );
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [slideshowImages.length]);
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: 'url(/hero-image.jpg)',
-            backgroundAttachment: 'fixed'
-          }}
-        />
-        <div className="absolute inset-0 bg-black/40" />
+      {/* Hero Section with Slideshow */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Slideshow Background */}
+        {slideshowImages.map((image, index) => (
+          <div
+            key={image}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{ 
+              backgroundImage: `url(${image})`,
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center text-white px-4">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -31,7 +59,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl font-light mb-8"
           >
-            Contemporary Artist
+            Romantic Realist • Oil Painter
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -108,7 +136,7 @@ const Home = () => {
               className="relative"
             >
               <img
-                src="/artist-photo.jpg"
+                src="/artworks/amanda-kreitzer.webp"
                 alt="Amanda Kreitzer"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />

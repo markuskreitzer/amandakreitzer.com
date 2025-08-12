@@ -20,7 +20,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <img
-              src="/artist-photo.jpg"
+              src="/artworks/amanda-kreitzer.webp"
               alt="Amanda Kreitzer in her studio"
               className="w-full h-96 object-cover rounded-lg shadow-lg mb-6"
             />
@@ -68,19 +68,19 @@ const About = () => {
           className="mt-16 grid md:grid-cols-2 gap-12"
         >
           <div>
-            <h3 className="font-sans text-xl font-bold mb-4">Education</h3>
+            <h3 className="font-sans text-xl font-bold mb-4">Awards</h3>
             <ul className="space-y-2 text-gray-600">
-              <li>MFA, Painting, Rhode Island School of Design</li>
-              <li>BFA, Fine Arts, University of Vermont</li>
+              <li>Wellington ATKV - Award for Cultural Contribution towards Wellington Community</li>
+              <li>Wellington Rapportryers - Award for Journalistic Contribution towards Wellington Community</li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-sans text-xl font-bold mb-4">Selected Exhibitions</h3>
             <ul className="space-y-2 text-gray-600">
-              <li>2024 - Solo Exhibition, Contemporary Gallery</li>
-              <li>2023 - Group Show, Artists Collective</li>
-              <li>2022 - Featured Artist, Annual Arts Festival</li>
+              <li>2012 - Kleinevalleij, Wellington (opened by Schalk Burger Snr.)</li>
+              <li>2009 - Simonsvlei Cellar, Paarl (opened by Trevor A. Cleevely)</li>
+              <li>2005 - Museum, Wellington (opened by Basie Basson)</li>
             </ul>
           </div>
         </motion.div>

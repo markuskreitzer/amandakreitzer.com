@@ -1,9 +1,0 @@
-mixin carousel-1({ slides, hook })
-
-    div(class= hook ? "carousel-1 " + hook :  "carousel-1")
-
-        each slide in slides
-
-            img(src= slide.path
-                class=`slide ${ slide.active ? 'active' : ''}`
-                alt= slide.alt)

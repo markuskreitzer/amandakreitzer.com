@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import * as Dialog from '@radix-ui/react-dialog';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 
 const GalleryModal = ({ artwork, isOpen, onClose, allArtworks }) => {
   const [currentIndex, setCurrentIndex] = useState(
@@ -50,6 +51,9 @@ const GalleryModal = ({ artwork, isOpen, onClose, allArtworks }) => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
               >
+                <VisuallyHidden.Root asChild>
+                  <Dialog.Title>{currentArtwork.title} - Gallery View</Dialog.Title>
+                </VisuallyHidden.Root>
                 <div className="relative max-w-7xl w-full max-h-[90vh] flex items-center justify-center pointer-events-auto">
                   {/* Close button */}
                   <button

@@ -1,0 +1,20 @@
+---
+# Artwork Metadata
+# This file contains metadata for artwork #72
+# Edit this file to update artwork information without modifying code
+
+id: 72
+title: "Holstein Portrait"
+year: 2024
+medium: "Oil on canvas"
+dimensions: "12" × 16" (30.5cm × 40.6cm)"
+description: "A classic black and white dairy cow rendered in profile, showcasing the distinctive markings of this beloved breed."
+available: true
+
+# Optional fields (uncomment and add as needed):
+# price: "$X,XXX"
+# series: "Series Name"
+# tags: ["tag1", "tag2", "tag3"]
+# exhibitions:
+#   - "Exhibition Name, Year"
+# notes: "Internal notes about the artwork"

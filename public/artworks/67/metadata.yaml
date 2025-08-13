@@ -1,0 +1,20 @@
+---
+# Artwork Metadata
+# This file contains metadata for artwork #67
+# Edit this file to update artwork information without modifying code
+
+id: 67
+title: "Latona and the Rooster"
+year: 2023
+medium: "Oil on canvas"
+dimensions: "30" × 40" (76.2cm × 101.6cm)"
+description: ""
+available: false
+
+# Optional fields (uncomment and add as needed):
+# price: "$X,XXX"
+# series: "Series Name"
+# tags: ["tag1", "tag2", "tag3"]
+# exhibitions:
+#   - "Exhibition Name, Year"
+# notes: "Internal notes about the artwork"

@@ -29,12 +29,28 @@ const GalleryGrid = ({ artworks }) => {
             onClick={() => openModal(artwork)}
           >
             <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-              <img
-                src={artwork.thumbnail || artwork.image}
-                alt={artwork.title}
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-              />
+              {/* Image container with aspect ratio preservation */}
+              <div className="aspect-square bg-gray-100 flex items-center justify-center">
+                <img
+                  src={artwork.thumbnail || artwork.image}
+                  alt={artwork.title}
+                  className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              
+              {/* Available/Sold Badge */}
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  artwork.available 
+                    ? 'bg-green-500 text-white' 
+                    : 'bg-red-500 text-white'
+                }`}>
+                  {artwork.available ? 'Available' : 'Sold'}
+                </span>
+              </div>
+              
+              {/* Title overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
                   <h3 className="text-lg font-semibold">{artwork.title}</h3>

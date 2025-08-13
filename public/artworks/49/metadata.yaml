@@ -1,0 +1,20 @@
+---
+# Artwork Metadata
+# This file contains metadata for artwork #49
+# Edit this file to update artwork information without modifying code
+
+id: 49
+title: "Friendship Acquired"
+year: 2020
+medium: "Oil on canvas"
+dimensions: "10" × 10" (25.4cm × 25.4cm)"
+description: ""
+available: true
+
+# Optional fields (uncomment and add as needed):
+# price: "$X,XXX"
+# series: "Series Name"
+# tags: ["tag1", "tag2", "tag3"]
+# exhibitions:
+#   - "Exhibition Name, Year"
+# notes: "Internal notes about the artwork"

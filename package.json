@@ -6,7 +6,9 @@
   "description": "Portfolio website for artist Amanda Kreitzer",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:artwork-index && vite build",
+    "build:artwork-index": "node scripts/build-artwork-index.js",
+    "add-art": "node scripts/add-artwork.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",

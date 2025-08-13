@@ -97,7 +97,12 @@ const GalleryModal = ({ artwork, isOpen, onClose, allArtworks }) => {
                       />
                     </div>
                     <div className="lg:w-80 text-white p-6 lg:p-0">
-                      <h2 className="text-2xl font-bold mb-2">{currentArtwork.title}</h2>
+                      <div className="flex items-center gap-3 mb-2">
+                        <h2 className="text-2xl font-bold">{currentArtwork.title}</h2>
+                        <span className="text-xs bg-gray-600 text-gray-200 px-2 py-1 rounded font-mono">
+                          ID: {currentArtwork.id}
+                        </span>
+                      </div>
                       <p className="text-lg mb-4">{currentArtwork.year}</p>
                       {currentArtwork.medium && (
                         <p className="text-sm text-gray-300 mb-2">{currentArtwork.medium}</p>

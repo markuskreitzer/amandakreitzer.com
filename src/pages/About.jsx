@@ -20,7 +20,7 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <img
-              src="/artworks/amanda-kreitzer.webp"
+              src="/artworks/amanda/image.webp"
               alt="Amanda Kreitzer in her studio"
               className="w-full h-96 object-cover rounded-lg shadow-lg mb-6"
             />

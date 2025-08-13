@@ -1,0 +1,20 @@
+---
+# Artwork Metadata
+# This file contains metadata for artwork #80
+# Edit this file to update artwork information without modifying code
+
+id: 80
+title: "Rooster Standoff"
+year: 2024
+medium: "Oil on canvas"
+dimensions: "16" × 20" (40.6cm × 50.8cm)"
+description: "Two roosters facing each other in a tense moment of territorial confrontation, capturing natural behavior and drama."
+available: true
+
+# Optional fields (uncomment and add as needed):
+# price: "$X,XXX"
+# series: "Series Name"
+# tags: ["tag1", "tag2", "tag3"]
+# exhibitions:
+#   - "Exhibition Name, Year"
+# notes: "Internal notes about the artwork"

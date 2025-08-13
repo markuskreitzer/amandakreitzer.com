@@ -5,6 +5,7 @@ import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Exhibitions from './pages/Exhibitions';
 import Contact from './pages/Contact';
+import ContactConfirmation from './pages/ContactConfirmation';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="exhibitions" element={<Exhibitions />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="contact/confirmation" element={<ContactConfirmation />} />
         </Route>
       </Routes>
     </Router>

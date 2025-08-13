@@ -1,0 +1,20 @@
+---
+# Artwork Metadata
+# This file contains metadata for artwork #1
+# Edit this file to update artwork information without modifying code
+
+id: 1
+title: "Subtle Autumn"
+year: 1995
+medium: "Oil on wood"
+dimensions: "18" × 25" (46cm × 64cm)"
+description: ""
+available: false
+
+# Optional fields (uncomment and add as needed):
+# price: "$X,XXX"
+# series: "Series Name"
+# tags: ["tag1", "tag2", "tag3"]
+# exhibitions:
+#   - "Exhibition Name, Year"
+# notes: "Internal notes about the artwork"

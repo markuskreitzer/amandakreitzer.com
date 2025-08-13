@@ -1,8 +1,40 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import GalleryGrid from '../components/Gallery/GalleryGrid';
-import { galleryArtworks } from '../data/artworks';
+import { loadCollectionsData } from '../data/artworks';
 
 const Gallery = () => {
+  const [artworks, setArtworks] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadArtworks = async () => {
+      try {
+        const collections = await loadCollectionsData();
+        setArtworks(collections.all || []);
+      } catch (error) {
+        console.error('Failed to load gallery artworks:', error);
+        setArtworks([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadArtworks();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="py-16 px-4">
+        <div className="container mx-auto">
+          <div className="text-center py-16">
+            <p className="text-gray-500 text-lg">Loading gallery...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="py-16 px-4">
       <div className="container mx-auto">
@@ -18,9 +50,9 @@ const Gallery = () => {
           </p>
         </motion.div>
         
-        <GalleryGrid artworks={galleryArtworks} />
+        <GalleryGrid artworks={artworks} />
         
-        {galleryArtworks.length === 0 && (
+        {artworks.length === 0 && (
           <div className="text-center py-16">
             <p className="text-gray-500 text-lg">
               Gallery is being updated with new works. Please check back soon.

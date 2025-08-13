@@ -2,20 +2,22 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import GalleryGrid from '../components/Gallery/GalleryGrid';
-import { collections } from '../data/artworks';
+import { loadCollectionsData } from '../data/artworks';
 
 const Home = () => {
   // Featured artworks for slideshow (using some of the most striking pieces)
   const slideshowImages = [
-    '/artworks/67.webp', // Latona and the Rooster (latest)
-    '/artworks/17.webp', // Serendipity — Bontebok Ridge
-    '/artworks/15.webp', // Siblings Forever
-    '/artworks/28.webp', // Stroll
-    '/artworks/46.webp', // Tea Time Reverie
-    '/artworks/56.webp', // The Giant From Jersey
+    '/artworks/67/image.webp', // Latona and the Rooster (latest)
+    '/artworks/17/image.webp', // Serendipity — Bontebok Ridge
+    '/artworks/15/image.webp', // Siblings Forever
+    '/artworks/28/image.webp', // Stroll
+    '/artworks/46/image.webp', // Tea Time Reverie
+    '/artworks/56/image.webp', // The Giant From Jersey
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [featuredArtworks, setFeaturedArtworks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,6 +28,22 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, [slideshowImages.length]);
+
+  useEffect(() => {
+    const loadFeaturedArtworks = async () => {
+      try {
+        const collections = await loadCollectionsData();
+        setFeaturedArtworks(collections.featured || []);
+      } catch (error) {
+        console.error('Failed to load featured artworks:', error);
+        setFeaturedArtworks([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadFeaturedArtworks();
+  }, []);
 
   return (
     <div>
@@ -92,7 +110,13 @@ const Home = () => {
             </p>
           </motion.div>
           
-          <GalleryGrid artworks={collections.featured} />
+          {loading ? (
+            <div className="text-center py-8">
+              <p className="text-gray-500">Loading featured works...</p>
+            </div>
+          ) : (
+            <GalleryGrid artworks={featuredArtworks} />
+          )}
           
           <div className="text-center mt-12">
             <Link
@@ -136,7 +160,7 @@ const Home = () => {
               className="relative"
             >
               <img
-                src="/artworks/amanda-kreitzer.webp"
+                src="/artworks/amanda/image.webp"
                 alt="Amanda Kreitzer"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />

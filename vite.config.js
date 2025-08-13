@@ -8,4 +8,13 @@ export default defineConfig({
     react(),
     thumbnailsPlugin()
   ],
+  server: {
+    proxy: {
+      '/api/forms': {
+        target: 'https://forms.cygnul.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/forms/, '')
+      }
+    }
+  }
 })

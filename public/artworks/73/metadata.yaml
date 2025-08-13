@@ -1,0 +1,20 @@
+---
+# Artwork Metadata
+# This file contains metadata for artwork #73
+# Edit this file to update artwork information without modifying code
+
+id: 73
+title: "Golden Bull"
+year: 2024
+medium: "Oil on canvas"
+dimensions: "12" × 16" (30.5cm × 40.6cm)"
+description: "A majestic bull with prominent horns set against a warm golden background, embodying strength and nobility."
+available: true
+
+# Optional fields (uncomment and add as needed):
+# price: "$X,XXX"
+# series: "Series Name"
+# tags: ["tag1", "tag2", "tag3"]
+# exhibitions:
+#   - "Exhibition Name, Year"
+# notes: "Internal notes about the artwork"

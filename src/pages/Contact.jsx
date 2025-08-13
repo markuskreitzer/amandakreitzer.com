@@ -1,13 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    phone: '',
+    subject: 'Purchase inquiry',
     message: ''
   });
+
+  const RECAPTCHA_SITE_KEY = '6LcLifEZAAAAADKfIJsRnfEc2BTrSmJK_pIKtK50';
+
+  // Load reCAPTCHA script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup: remove script on unmount
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -16,13 +34,84 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  // reCAPTCHA token generation (matching original Mailbox implementation)
+  const getRecaptchaToken = () => {
+    return new Promise((resolve) => {
+      if (window.grecaptcha && window.grecaptcha.ready) {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
+            action: 'amandakreitzer_1'
+          }).then((token) => {
+            resolve(token);
+          });
+        });
+      } else {
+        // If reCAPTCHA fails to load, resolve with empty token
+        resolve('');
+      }
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send to API, email service, etc.)
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    alert('Thank you for your message! I will get back to you soon.');
+    
+    try {
+      // Get reCAPTCHA token first (matching original flow)
+      const recaptchaToken = await getRecaptchaToken();
+      
+      // Prepare form data for backend (matching original Mailbox format)
+      const formPayload = new FormData();
+      
+      // Add form fields with exact names from original form
+      formPayload.append('name', formData.name);
+      formPayload.append('email', formData.email);
+      if (formData.phone) {
+        formPayload.append('phone', formData.phone);
+      }
+      formPayload.append('subject', formData.subject);
+      formPayload.append('message', formData.message);
+      
+      // Add required fields for backend processing (matching original)
+      formPayload.append('id', 'amandakreitzer_1');
+      formPayload.append('token', recaptchaToken);
+      
+      console.log('Submitting form data:');
+      for (let [key, value] of formPayload.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+      
+      // Submit to backend (use proxy in development, direct URL in production)
+      const endpoint = import.meta.env.DEV ? '/api/forms/' : 'https://forms.cygnul.com/';
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        mode: 'cors',
+        body: formPayload
+      });
+      
+      console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Response data:', result);
+        if (result.responseCode === 0) {
+          // Success - reset form and redirect
+          setFormData({ name: '', email: '', phone: '', subject: 'Purchase inquiry', message: '' });
+          navigate('/contact/confirmation');
+        } else {
+          // Backend returned an error
+          console.error('Form submission failed:', result);
+          alert('Sorry, there was an error sending your message. Please try again.');
+        }
+      } else {
+        const errorText = await response.text();
+        console.error('HTTP error response:', errorText);
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Sorry, there was an error sending your message. Please try again.');
+    }
   };
 
   return (
@@ -81,18 +170,35 @@ const Contact = () => {
               </div>
               
               <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone (optional)
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-artist-500 focus:border-artist-500"
+                />
+              </div>
+              
+              <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                   Subject
                 </label>
-                <input
-                  type="text"
+                <select
                   id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-artist-500 focus:border-artist-500"
-                />
+                >
+                  <option value="Purchase inquiry">Purchase inquiry</option>
+                  <option value="Commission order">Commission order</option>
+                  <option value="Shipping">Shipping</option>
+                </select>
               </div>
               
               <div>

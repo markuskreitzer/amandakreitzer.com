@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <h3 className="font-dancing text-2xl mb-4 text-gray-900">Amanda Kreitzer</h3>
             <p className="text-gray-600 text-sm">
-              Contemporary artist exploring themes of nature and humanity
+              Artist exploring themes of nature and humanity
             </p>
           </div>
           

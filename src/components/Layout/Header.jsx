@@ -22,7 +22,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {navItems.map(item => (
               <NavLink
                 key={item.path}
@@ -36,6 +36,14 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
+            <a
+              href="https://the-eccentric-easel.square.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-sm uppercase tracking-wider bg-artist-600 text-white px-4 py-2 rounded-md hover:bg-artist-700 transition-colors"
+            >
+              Purchase
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,6 +90,15 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
+            <a
+              href="https://the-eccentric-easel.square.site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block font-sans text-sm uppercase tracking-wider bg-artist-600 text-white px-4 py-2 rounded-md hover:bg-artist-700 transition-colors text-center mt-4"
+            >
+              Purchase
+            </a>
           </div>
         </motion.div>
       </nav>

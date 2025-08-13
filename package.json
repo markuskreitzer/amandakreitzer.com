@@ -1,9 +1,12 @@
 {
   "name": "amanda-kreitzer-portfolio",
   "private": true,
-  "version": "2.1.0",
+  "version": "3.1.0",
   "type": "module",
   "description": "Portfolio website for artist Amanda Kreitzer",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "npm run build:artwork-index && vite build",

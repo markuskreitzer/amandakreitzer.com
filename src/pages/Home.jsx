@@ -141,7 +141,7 @@ const Home = () => {
             >
               <h2 className="font-dancing text-4xl md:text-5xl mb-6">About the Artist</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Amanda Kreitzer is a contemporary artist whose work explores the intersection of nature 
+                Amanda Kreitzer is an artist whose work explores the intersection of nature 
                 and human experience. Through her paintings, she captures fleeting moments of beauty 
                 and contemplation.
               </p>

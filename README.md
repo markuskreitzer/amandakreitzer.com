@@ -1,6 +1,6 @@
 # Amanda Kreitzer - Artist Portfolio Website
 
-A modern React-based portfolio website showcasing the artwork of contemporary artist Amanda Kreitzer. The site features dynamic galleries, contact functionality, and a comprehensive artwork management system.
+A modern React-based portfolio website showcasing the artwork of artist Amanda Kreitzer. The site features dynamic galleries, contact functionality, and a comprehensive artwork management system.
 
 ## 🎨 Overview
 

@@ -2,8 +2,16 @@ import { test, expect } from '@playwright/test';
 
 const BASE_URL = 'http://localhost:5174';
 
+async function openNavigation(page) {
+  const toggle = page.getByRole('button', { name: 'Toggle menu', exact: true });
+  if (await toggle.isVisible()) await toggle.click();
+}
+
 test.describe('Amanda Kreitzer Portfolio', () => {
   test.beforeEach(async ({ page }) => {
+    await page.route('https://www.google.com/recaptcha/api.js?**', route =>
+      route.fulfill({ contentType: 'application/javascript', body: '' })
+    );
     // Set up console monitoring for each test
     page.on('console', msg => {
       if (msg.type() === 'error') {
@@ -28,11 +36,12 @@ test.describe('Amanda Kreitzer Portfolio', () => {
     await expect(page.locator('main')).toBeVisible();
     
     // Check navigation links
-    await expect(page.locator('nav a[href="/"]').first()).toBeVisible();
-    await expect(page.locator('nav a[href="/gallery"]').first()).toBeVisible();
-    await expect(page.locator('nav a[href="/about"]').first()).toBeVisible();
-    await expect(page.locator('nav a[href="/exhibitions"]').first()).toBeVisible();
-    await expect(page.locator('nav a[href="/contact"]').first()).toBeVisible();
+    await openNavigation(page);
+    await expect(page.locator('nav').getByRole('link', { name: 'Home', exact: true })).toBeVisible();
+    await expect(page.locator('nav').getByRole('link', { name: 'Gallery', exact: true })).toBeVisible();
+    await expect(page.locator('nav').getByRole('link', { name: 'About', exact: true })).toBeVisible();
+    await expect(page.locator('nav').getByRole('link', { name: 'Exhibitions', exact: true })).toBeVisible();
+    await expect(page.locator('nav').getByRole('link', { name: 'Contact', exact: true })).toBeVisible();
     
     // Check hero section
     await expect(page.locator('h1').first()).toContainText('Amanda Kreitzer');
@@ -62,7 +71,7 @@ test.describe('Amanda Kreitzer Portfolio', () => {
     expect(imageSrc).toBeTruthy();
     
     // Test modal functionality
-    await firstImage.click();
+    await galleryItems.first().click();
     
     // Wait for modal to appear
     await page.waitForSelector('[role="dialog"], .modal, [data-testid="gallery-modal"]', { timeout: 5000 });
@@ -90,27 +99,32 @@ test.describe('Amanda Kreitzer Portfolio', () => {
     await page.goto(BASE_URL);
     
     // Test Gallery navigation
-    await page.click('nav a[href="/gallery"]');
+    await openNavigation(page);
+    await page.locator('nav').getByRole('link', { name: 'Gallery', exact: true }).click();
     await expect(page).toHaveURL(`${BASE_URL}/gallery`);
-    await expect(page.locator('h1, h2')).toContainText(/Gallery|Artwork/i);
+    await expect(page.getByRole('heading', { name: 'Gallery', exact: true })).toBeVisible();
     
     // Test About navigation
-    await page.click('nav a[href="/about"]');
+    await openNavigation(page);
+    await page.locator('nav').getByRole('link', { name: 'About', exact: true }).click();
     await expect(page).toHaveURL(`${BASE_URL}/about`);
     await expect(page.locator('h1').first()).toContainText(/About/i);
     
     // Test Exhibitions navigation
-    await page.click('nav a[href="/exhibitions"]');
+    await openNavigation(page);
+    await page.locator('nav').getByRole('link', { name: 'Exhibitions', exact: true }).click();
     await expect(page).toHaveURL(`${BASE_URL}/exhibitions`);
     await expect(page.locator('h1').first()).toContainText(/Exhibition/i);
     
     // Test Contact navigation
-    await page.click('nav a[href="/contact"]');
+    await openNavigation(page);
+    await page.locator('nav').getByRole('link', { name: 'Contact', exact: true }).click();
     await expect(page).toHaveURL(`${BASE_URL}/contact`);
     await expect(page.locator('h1').first()).toContainText(/Contact/i);
     
     // Return to home
-    await page.click('nav a[href="/"]');
+    await openNavigation(page);
+    await page.locator('nav').getByRole('link', { name: 'Home', exact: true }).click();
     await expect(page).toHaveURL(BASE_URL + '/');
   });
 
@@ -222,8 +236,7 @@ test.describe('Amanda Kreitzer Portfolio', () => {
     await page.waitForSelector('[data-testid="gallery-grid"], .gallery-grid, .grid');
     
     // Click first image to open modal
-    const firstImage = page.locator('img').first();
-    await firstImage.click();
+    await page.locator('main .grid > .group').first().click();
     
     // Wait for modal
     await page.waitForSelector('[role="dialog"], .modal, [data-testid="gallery-modal"]');
